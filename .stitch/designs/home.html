@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Material Symbols Link -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope & Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#474747",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#ffffff",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary-fixed": "#5e5e5e",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed-dim": "#474747",
+                    "secondary": "#5f5e5e",
+                    "on-primary": "#e2e2e2",
+                    "tertiary": "#3b3b3b",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c6c6c6",
+                    "tertiary-fixed": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary": "#e2e2e2",
+                    "secondary-container": "#d6d4d3",
+                    "primary-container": "#3b3b3b",
+                    "secondary-fixed-dim": "#acabab",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#5e5e5e",
+                    "outline": "#777777",
+                    "on-secondary-container": "#1b1c1c",
+                    "on-primary-fixed-variant": "#e2e2e2",
+                    "on-error-container": "#410002",
+                    "on-tertiary-container": "#ffffff",
+                    "secondary-fixed": "#c8c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-container": "#747474",
+                    "on-tertiary-fixed": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Implementation -->
+<nav class="bg-[#f9f9f9] dark:bg-neutral-950 border-0 flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto sticky top-0 z-50">
+<div class="text-xl font-bold tracking-tighter text-black dark:text-white font-headline">PRECISION OPTICS</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white border-b-2 border-black dark:border-white pb-1 scale-100 active:scale-[0.98] transition-transform" href="#">HOME</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">PROJECTS</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">SERVICES</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">CONTACT</a>
+</div>
+<button class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white hover:opacity-70 transition-opacity duration-300 px-6 py-3 border border-black dark:border-white">
+            GET IN TOUCH
+        </button>
+</nav>
+<div class="bg-neutral-100 dark:bg-neutral-900 h-[1px] w-full"></div>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] w-full overflow-hidden">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="Cinematic close-up of a professional ARRI Alexa 35 camera on a dimly lit film set with anamorphic lens flares and soft blue atmospheric haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN76TsvN4WjEdX8XNv47hTuagPtZ8-CbDAEnAtaNBZNyRZxrDvVlqM4Gh5va8rJ0yEB_MIoNCbxu0urNGUWBAV7Uh7dBK7c9Jnduf07mqk-VPPPyTIJ_x_0ybEUh2W-ldak3OTEZJKdx4bPMyJnvoJyvXuOypFDwjXvfPEtht6l23FXiXH0L0OUJRIi8Ew6P4A4ztg-bBLfvUMW_1BScVoDLe6XAB00ebKc2a8dmsfMTF3qZX-E6lFeIegJPz0HMt66ydCByGQuGI"/>
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="relative z-10 h-full flex flex-col justify-center items-start px-12 max-w-[1920px] mx-auto">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-on-primary mb-6">Digital Imaging Excellence</span>
+<h1 class="font-headline text-[3.5rem] md:text-[5rem] leading-[1.1] text-white font-extrabold max-w-4xl tracking-tighter mb-8">
+                    Enhance Your Production
+                </h1>
+<p class="font-body text-lg text-white/80 max-w-2xl mb-12 leading-relaxed">
+                    Elevating cinematic narratives through rigorous data management and advanced color science. We bridge the gap between creative vision and technical execution on the highest stakes productions.
+                </p>
+<div class="flex gap-4">
+<button class="bg-white text-black px-10 py-4 font-label text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-neutral-200 transition-colors">
+                        SERVICES
+                    </button>
+<button class="border border-white text-white px-10 py-4 font-label text-[11px] font-bold tracking-[0.15em] uppercase hover:bg-white/10 transition-colors">
+                        CONTACT
+                    </button>
+</div>
+</div>
+<!-- Technical Data Strip -->
+<div class="absolute bottom-0 left-0 w-full bg-surface-container-highest px-12 py-3 flex justify-between items-center z-20">
+<div class="flex gap-8">
+<div class="flex flex-col">
+<span class="text-[9px] font-label text-neutral-500 uppercase tracking-widest">Resolution</span>
+<span class="text-[11px] font-label font-semibold uppercase tracking-wider">4.6K Open Gate</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[9px] font-label text-neutral-500 uppercase tracking-widest">Codec</span>
+<span class="text-[11px] font-label font-semibold uppercase tracking-wider">ARRIRAW / ProRES 4444 XQ</span>
+</div>
+</div>
+<div class="hidden md:block text-[9px] font-label text-neutral-400 uppercase tracking-[0.2em]">Live Color Grading &amp; Workflow Architecture</div>
+</div>
+</section>
+<!-- Technical Precision Section -->
+<section class="bg-surface py-32 px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-5">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-6 block">Vision and Fidelity</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-8">TECHNICAL PRECISION</h2>
+</div>
+<div class="md:col-span-7">
+<p class="font-body text-xl leading-relaxed text-neutral-600 mb-8">
+                    The modern digital negative demands more than just storage; it requires a deep understanding of sensor physics and color pipeline integrity. At Precision Optics, we treat every frame as a masterwork, ensuring that the director's intent survives the journey from the matte box to the mastering suite.
+                </p>
+<div class="grid grid-cols-2 gap-12 mt-16 border-t border-outline-variant/20 pt-12">
+<div>
+<h4 class="font-label text-[11px] font-bold tracking-widest mb-4">ON-SET COLOR</h4>
+<p class="font-body text-sm text-neutral-500">Real-time HDR grading and exposure monitoring to lock in the look before the camera wraps.</p>
+</div>
+<div>
+<h4 class="font-label text-[11px] font-bold tracking-widest mb-4">DATA ARCHITECTURE</h4>
+<p class="font-body text-sm text-neutral-500">Triple-redundant LTO-9 archival and secure high-speed dailies delivery for global workflows.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Selected Works Section (Bento-inspired Grid) -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary mb-4 block">Our Portfolio</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight">SELECTED WORKS</h2>
+</div>
+<a class="font-label text-[11px] font-bold tracking-[0.1em] border-b border-black pb-1 hover:opacity-60 transition-opacity" href="#">VIEW ALL PROJECTS</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
+<!-- Project 1: Large -->
+<div class="md:col-span-2 group relative aspect-[16/9] overflow-hidden bg-black">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="High-contrast cinematic frame of an urban neon-lit street at night with sharp focus and deep blacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUq4K2UhEVLArCm5OYlx4P6WX48qaPEwsB6Z5C1oE8RZCtQlP-IPiMzd0bXh8Ha7oeYo4Q-6WCYGW_p_1OxvGERaRe7UeTEcwopQpgPjO-F-KeYoau7a_m2aMLp26FaxYXjLvDqjIjfnY0ZUVLDCOKoMs7hXm3UAF7T1TpVQ3CT0i_V0-7oLtQ8uGMLY5Vm1OaM6p1Hz6f2ha5M27CVYtH2BDmCT6UhV8RRLw09jpFN4stuAJ_9IDag8BUqZtDn6lw4R9zh0eGC-8"/>
+<div class="absolute bottom-0 left-0 w-full glass-panel p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight">NOIR CITY</h3>
+<span class="text-[9px] font-label tracking-[0.2em] uppercase text-neutral-600">Feature Film / Color Management</span>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative aspect-square overflow-hidden bg-black">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Modernist architectural building with harsh sunlight and geometric shadows, extremely sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAazbYXgBvuVB3d_IGu5NFqqOQZcuH1ZhkECL8BHI6DfGFLk84pEqkYT2DXz3OOiw8Q_u6Olkz2HaM7ls0WQxVJa1ynoFBaqKJy5uBqa7SbI0a9YbW_5QBpxKqvcsQNLib5EmcHxEVoXWhpnM3QafvZ_xTdCDcOzSXEqyVclAUBfH7xNjHUknw3TYtMkIcTYi2XO9fAd9de_wxT_Teqy6QjmQ66ZLSpoogu9ovOo0fZDgm2GMhlt7FfIN5OcVr7-pJyv17CIa4AzO4"/>
+<div class="absolute bottom-0 left-0 w-full glass-panel p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-lg font-bold tracking-tight">MONOLITH</h3>
+<span class="text-[9px] font-label tracking-[0.2em] uppercase text-neutral-600">Commercial / DIT Services</span>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative aspect-square overflow-hidden bg-black">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Abstract macro shot of optical glass and lens elements with subtle prismatic reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS2NmBw6L55A0GPeD-wEFNpCVnSkIfZ7ZEjxD-v11l1lCXUcxysYMp3JkUwKvm3eQ5fbK6xMXLCNGeLhQS8jiRik-xXhx2lWMvod6X_WZGbNXTuESZHTi9ydIHJn6gumr9SDxfXeiqu0bBoulnDtnn9I6SjDtxRc72Cc0DSd4rxUvZJ08bCW7sOpgHhwSEJ5zzO7jrsOm8j52AiZCl4xlHywZ4YYmcLHmqfHWd1Dow4AnOtGB0N51wTKoAZXYALHtOZBoX15XM-1Y"/>
+<div class="absolute bottom-0 left-0 w-full glass-panel p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-lg font-bold tracking-tight">PRISM</h3>
+<span class="text-[9px] font-label tracking-[0.2em] uppercase text-neutral-600">Short Film / Workflow Design</span>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 4: Large -->
+<div class="md:col-span-2 group relative aspect-[21/9] overflow-hidden bg-black">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" data-alt="Breathtaking wide landscape of a volcanic desert at twilight with cool blue tones and sharp terrain details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZwAF9edHptccnCYRvbH803LttQ1lEi_gW1i_FLaRMgGbuH0GiwDM1-rcFvhVnemhutYzXLbLWI3Yv9V4bYQdm3WP6AREe6kkb-l8aeDhRmS-VnnPhjrkaffCJwsZ0iTRVy2xoXpdmohtiJQF-tnqiWphj9z4GExPWyOsm50LdImrqgSR2h0doBmOLnNn4wdSBKIns5WfpCyGa8eNI74ssYPlYQch6LiFRK1oLvq39QxX_dpcGLS03zrNfYA5ryWqybyO9V2TXu4M"/>
+<div class="absolute bottom-0 left-0 w-full glass-panel p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-xl font-bold tracking-tight">ISLAND OF SILENCE</h3>
+<span class="text-[9px] font-label tracking-[0.2em] uppercase text-neutral-600">Documentary / Raw Pipeline</span>
+</div>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Implementation -->
+<footer class="bg-[#f9f9f9] dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800 w-full">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 gap-6 max-w-[1920px] mx-auto">
+<div class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500">
+                © 2024 OPTICAL PRECISION. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-10">
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60 transition-opacity" href="#">INSTAGRAM</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60 transition-opacity" href="#">VIMEO</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60 transition-opacity" href="#">LINKEDIN</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#474747",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#ffffff",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary-fixed": "#5e5e5e",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed-dim": "#474747",
+                    "secondary": "#5f5e5e",
+                    "on-primary": "#e2e2e2",
+                    "tertiary": "#3b3b3b",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c6c6c6",
+                    "tertiary-fixed": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary": "#e2e2e2",
+                    "secondary-container": "#d6d4d3",
+                    "primary-container": "#3b3b3b",
+                    "secondary-fixed-dim": "#acabab",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#5e5e5e",
+                    "outline": "#777777",
+                    "on-secondary-container": "#1b1c1c",
+                    "on-primary-fixed-variant": "#e2e2e2",
+                    "on-error-container": "#410002",
+                    "on-tertiary-container": "#ffffff",
+                    "secondary-fixed": "#c8c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-container": "#747474",
+                    "on-tertiary-fixed": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="w-full border-0 bg-[#f9f9f9] dark:bg-neutral-950">
+<nav class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-black dark:text-white font-headline">
+                PRECISION OPTICS
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">HOME</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white border-b-2 border-black dark:border-white pb-1 scale-100 active:scale-[0.98] transition-transform" href="#">PROJECTS</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">SERVICES</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors scale-100 active:scale-[0.98] transition-transform" href="#">CONTACT</a>
+</div>
+<button class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold bg-primary text-on-primary px-6 py-3 hover:opacity-70 transition-opacity duration-300 active:scale-[0.95]">
+                GET IN TOUCH
+            </button>
+</nav>
+<div class="bg-neutral-100 dark:bg-neutral-900 h-[1px] w-full"></div>
+</header>
+<main class="max-w-[1920px] mx-auto px-12 py-20">
+<!-- Page Header -->
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<span class="font-label uppercase text-[10px] tracking-[0.2em] text-outline mb-4 block">Selected Works 2022—2024</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight text-primary">
+                    Visual <br/> Precision.
+                </h1>
+</div>
+<div class="text-right">
+<p class="font-label uppercase text-[10px] tracking-[0.2em] text-outline mb-2">Filter by format</p>
+<div class="flex gap-4">
+<button class="font-label text-[11px] uppercase tracking-wider font-semibold border-b-2 border-primary pb-1">All Work</button>
+<button class="font-label text-[11px] uppercase tracking-wider text-outline hover:text-primary transition-colors">Narrative</button>
+<button class="font-label text-[11px] uppercase tracking-wider text-outline hover:text-primary transition-colors">Commercial</button>
+</div>
+</div>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-32 md:gap-x-12">
+<!-- Project 01: Full Width Hero Style -->
+<div class="md:col-span-12 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-[21/9] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Cinematic night city street with glowing neon lights reflected in puddles, futuristic cyberpunk aesthetic with deep blues and pinks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwfeKOdwMYmqLZSaWHcNzGOP_QJ6rFVuFsn1YC_CYuZ6xIits5aaPDxltUhT_j0FtvDnPiory3OSJggtOxjW05xhXt-VJQC9jt1W2MC913PCrIyqchg0TPUlc0f0kLx5Wu0G6Ox_r2pbYs7cDw4-hy6AUACtcsX8lGJRq6ZV2TDPkuMjBZ80q-xvT4Jae2bQbP_z95Er0xG2p4vqAtzDKSm5XmDn61fTgQR50560-jCQsC9GbT-O9_jt1JxjhfjvdGAiLsAwl6-x8"/>
+<!-- Technical HUD Overlay -->
+<div class="absolute bottom-0 left-0 w-full bg-surface-container-lowest/70 backdrop-blur-md px-8 py-4 flex flex-wrap justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div class="flex gap-8">
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">Camera</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">ARRI ALEXA 35</span>
+</div>
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">Format</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">ARRIRAW 4.6K</span>
+</div>
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">Optics</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">COOKE S8/I</span>
+</div>
+</div>
+<div class="hidden md:block">
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline text-right">LUT Profile</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">KODAK 5219 P3-D65</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<h2 class="font-headline text-4xl font-extrabold tracking-tighter uppercase text-primary">VANGUARD: NEON DRIFT</h2>
+<p class="font-label text-[12px] uppercase tracking-[0.1em] text-outline mt-1">NARRATIVE FEATURE / 2024</p>
+</div>
+<div class="pt-2">
+<span class="material-symbols-outlined text-primary text-3xl">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 02: Half Width -->
+<div class="md:col-span-7 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-video bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Wide shot of vast orange sand dunes under a clear sky, cinematic minimalist landscape with high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1LhqJXlCF6vw4PmruD3y5lCpOvuNabgL-fJQKAK4h6dAiJ0JKOlLWXyUWlb-pqyUvfYz20GKfrbt81AV2dtQbZuK_2uzMt2HbsGNPpbDgXMFNdu94ycQfshkXZLHKXl_2K37gIM4ETlcs-dfur1jOPJ3wZ1AOh0nCJN0Ovldi2hR3kkrOeqJzilMkMHgKXVX_-TlsW-EhLXfwVrVvjUJiK4DYhVR--XTIlFJvc5EHaeCiZu3eK8Vb5wIEj1EJsxLCfO-0i3YqvkA"/>
+<div class="absolute bottom-0 left-0 w-full bg-surface-container-lowest/70 backdrop-blur-md px-6 py-4 flex gap-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">Optics</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">ANGÉNIEUX OPTIMO</span>
+</div>
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">ISO</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">EI 800</span>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter uppercase text-primary">SILENCE OF THE DUNES</h2>
+<p class="font-label text-[11px] uppercase tracking-[0.1em] text-outline mt-1">EXPERIMENTAL SHORT / 2023</p>
+</div>
+</div>
+<!-- Project 03: Half Width Offset -->
+<div class="md:col-span-5 pt-0 md:pt-32 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Close up portrait of a person in shadow with a single strip of harsh white light across their eyes, high fashion editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZ2TEHuxfoefpWeoL17CPMOa96LxCvhOU8ANIggMt4LNTxv5LtTYlqCL1jzAi0g9QPcRKDcccfDfmyLgsXKYD9QiwR26iEGlANtwsXpv-uGx7fEmNFoPYF2VxiGqwYbkBBPcO8VXDjXm0WwMe2u4bTFWgNZ3nAsj1XkhF34ghq3msMMv66IvYcpF0slKHz3xyEZOMGU6NpkxJKmZpP0MTOolP7jQcwZ9Ot-nhByibE5dels4zWoXkPQJyFk-T9IDAkftQQ_VGXGQ"/>
+<div class="absolute bottom-0 left-0 w-full bg-surface-container-lowest/70 backdrop-blur-md px-6 py-4 flex gap-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div>
+<span class="block font-label text-[9px] uppercase tracking-[0.1em] text-outline">Camera</span>
+<span class="block font-label text-[11px] uppercase font-bold text-primary">RED V-RAPTOR XL</span>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter uppercase text-primary">MONOLITH</h2>
+<p class="font-label text-[11px] uppercase tracking-[0.1em] text-outline mt-1">COMMERCIAL CAMPAIGN / 2024</p>
+</div>
+</div>
+<!-- Technical Data Strip -->
+<div class="md:col-span-12 py-12 border-y border-outline-variant/20 flex justify-between items-center">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Current Workflow Standard: ACES v1.3 / P3-D65 Display Transform</span>
+<div class="flex gap-12">
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-outline">Live Grade Supported</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-outline">Daily Delivery &lt; 4HRS</span>
+<span class="font-label text-[10px] uppercase tracking-[0.1em] text-outline">LTO-9 Archiving</span>
+</div>
+</div>
+<!-- Project 04: Three Column Grid -->
+<div class="md:col-span-4 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Grainy black and white shot of a vintage film camera on a tripod in a dark studio, artistic noir lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJw6eHdQpURcTDqtAP9EjO895iCLKia0VyCcA3yWBR_Io5pVd7skXr3twijUUyC9U45iF3oSqJ_2Gz9mcJwbdgyJQdiCc_4xyzBfrwIwx8H0hb1rJrU4YsanE9i9RQHJdOeR6UneGbvjLVvRcekXYDkMdFnWCUDiMW8SSLcn2Xp5X4NLWh3YAtuR9ZEch_Yfjvidpaw50o9Gas7hCD7HCX1TAw5MN42TfCuBScvvX633_ar2ZtsJv0FuEABTBjlNEXyD03fyCsbZI"/>
+</div>
+<div class="mt-6">
+<h2 class="font-headline text-2xl font-extrabold tracking-tighter uppercase text-primary">ANALOG ECHOES</h2>
+<p class="font-label text-[10px] uppercase tracking-[0.1em] text-outline mt-1">DOCUMENTARY / 2022</p>
+</div>
+</div>
+<div class="md:col-span-4 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Abstract macro shot of glass prisms refracting white light into spectrum colors, clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgyGx7uWuhaTDEfbIjM8LejIsrxrC1RNOWALtSO_cWqkzz1AJm5WEU3dv6DMNW9K99m8NXJLPd4xUW55xnj_7AiU6S-xyQfaV58peCiFPIqNQrXJDun1lmp59JYfEK86XxMtywV3hOv2h-JQ7gZCPpOes-NiSX7Nbe_3UkNJ0VXknoaxwhWpjmvBztZrHS1jVAu3fYM_KkYhGEse-mWWZrqKQSLG13kEEHgxDisASHmtv7-1DukUTOXpcbaW4j3tP3O92JxVeH734"/>
+</div>
+<div class="mt-6">
+<h2 class="font-headline text-2xl font-extrabold tracking-tighter uppercase text-primary">PRISM THEORY</h2>
+<p class="font-label text-[10px] uppercase tracking-[0.1em] text-outline mt-1">BRAND FILM / 2023</p>
+</div>
+</div>
+<div class="md:col-span-4 group cursor-crosshair">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="Dramatic mountain range at dawn with misty valleys, cool blue tones with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAemx859I6KDWnJm8dACz4nfgMujbA71zB40pMCQbF08ENaVkkP5_sL0gwZHi1-4G5lhgt6cJ2vOxLjIwUSS0_x-80BqaKGVdDmJpuwKr4Rl_E3LnPOBSdJsxsgJRi6dwxbeZS8GTv6PZpwjubucS-bh5vTlPPIFI0D08qqJlSUxlh8pym4HWeiVQlvTqC7zF9Dwca-X6xkEzvUZbVALwUpNAi0qGmrTy8ip1hNWYdF5FipEtPdte84Esd_zomgfs9Mw5j5bUX0jAk"/>
+</div>
+<div class="mt-6">
+<h2 class="font-headline text-2xl font-extrabold tracking-tighter uppercase text-primary">COLD PEAKS</h2>
+<p class="font-label text-[10px] uppercase tracking-[0.1em] text-outline mt-1">NARRATIVE FEATURE / 2023</p>
+</div>
+</div>
+</div>
+<!-- Contact CTA -->
+<section class="mt-48 pt-24 border-t border-outline-variant/20 text-center">
+<h3 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter text-primary uppercase mb-12">Collaborate on your next vision.</h3>
+<div class="flex justify-center gap-8">
+<a class="font-label text-[12px] uppercase tracking-[0.2em] font-bold py-4 px-10 bg-primary text-on-primary hover:opacity-80 transition-opacity" href="#">Request Portfolio PDF</a>
+<a class="font-label text-[12px] uppercase tracking-[0.2em] font-bold py-4 px-10 border border-primary text-primary hover:bg-surface-container transition-colors" href="#">Contact Studio</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-neutral-200 dark:border-neutral-800 bg-[#f9f9f9] dark:bg-neutral-950">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 gap-6 max-w-[1920px] mx-auto">
+<div class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500">
+                © 2024 OPTICAL PRECISION. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60" href="#">INSTAGRAM</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60" href="#">VIMEO</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4 opacity-100 active:opacity-60" href="#">LINKEDIN</a>
+</div>
+</div>
+</footer>
+</body></html>

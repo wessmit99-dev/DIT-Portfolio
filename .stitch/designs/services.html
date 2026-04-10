@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#474747",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#ffffff",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary-fixed": "#5e5e5e",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed-dim": "#474747",
+                    "secondary": "#5f5e5e",
+                    "on-primary": "#e2e2e2",
+                    "tertiary": "#3b3b3b",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c6c6c6",
+                    "tertiary-fixed": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary": "#e2e2e2",
+                    "secondary-container": "#d6d4d3",
+                    "primary-container": "#3b3b3b",
+                    "secondary-fixed-dim": "#acabab",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#5e5e5e",
+                    "outline": "#777777",
+                    "on-secondary-container": "#1b1c1c",
+                    "on-primary-fixed-variant": "#e2e2e2",
+                    "on-error-container": "#410002",
+                    "on-tertiary-container": "#ffffff",
+                    "secondary-fixed": "#c8c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-container": "#747474",
+                    "on-tertiary-fixed": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="bg-[#f9f9f9] dark:bg-neutral-950 w-full border-0">
+<div class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-black dark:text-white">PRECISION OPTICS</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">HOME</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">PROJECTS</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white border-b-2 border-black dark:border-white pb-1" href="#">SERVICES</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">CONTACT</a>
+</div>
+<button class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold px-6 py-3 bg-black text-[#e2e2e2] scale-100 active:scale-[0.98] transition-transform">
+                GET IN TOUCH
+            </button>
+</div>
+</nav>
+<!-- Header Section -->
+<header class="px-12 py-24 md:py-32 max-w-[1920px] mx-auto">
+<div class="max-w-4xl">
+<span class="font-label text-[10px] tracking-[0.2em] uppercase text-outline mb-4 block">Operation Protocol</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-8">TECHNICAL <br/>SERVICES</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Precision-engineered DIT workflows designed for the highest level of cinematic integrity. We manage signal, data, and aesthetics with uncompromising technical exactitude.
+            </p>
+</div>
+</header>
+<!-- Content Sections -->
+<main class="space-y-32 pb-32">
+<!-- 01 Live Grading -->
+<section class="px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-4 sticky top-12">
+<div class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-2">Service // 01</div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">LIVE GRADING</h2>
+<p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+                    Real-time color manipulation and look development on-set. We provide cinematographers with calibrated visual context, ensuring the creative intent is baked into the pipeline from the first frame.
+                </p>
+<div class="bg-surface-container-highest p-6 space-y-4">
+<span class="font-label text-[9px] tracking-[0.1em] uppercase block opacity-60">Primary Hardware &amp; Software</span>
+<ul class="space-y-2">
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> POMFORT LIVEGRADE STUDIO
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> FLANDERS SCIENTIFIC XM310K
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> BLACKMAGIC TERANEX MINI
+                        </li>
+</ul>
+</div>
+</div>
+<div class="md:col-span-8">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-end reference monitor displaying a cinematic color-graded scene with technical histograms and scopes overlayed in a dark studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg_kZLcSSJYCV58YPobwQa8g9bs63w2knNWUJqVBkoqNMpC4tEJJLp99lBo40mEHaI_CAEewWapLYL80Y63ZEFhEe92Y8MIughEboP_31JeT_j5InO6-rm5h_7q32tzMyoGartu857T1udfV4GXZLTiBEyIEnCX-iBwJE7-6DJX2H-66ouwz42lwhUiTlm9Ry77gy88wzNB_dy2qC_TnFRHk0vGztGR__4ZI15KfoDfcogO6Fm7YwJcVgy5tc6RdtbQK9cAg8tIJo"/>
+</div>
+</div>
+</section>
+<!-- Technical Data Strip -->
+<div class="w-full bg-surface-container-highest py-3 overflow-hidden">
+<div class="flex whitespace-nowrap gap-24 animate-marquee font-label text-[9px] tracking-[0.3em] uppercase font-medium">
+<span>SIGNAL INTEGRITY VALIDATED</span>
+<span>DATA REDUNDANCY 3:2:1</span>
+<span>COLOR SPACE: ACES / REC.709</span>
+<span>MONITOR CALIBRATION: CALMAN ULTIMATE</span>
+<span>SIGNAL INTEGRITY VALIDATED</span>
+<span>DATA REDUNDANCY 3:2:1</span>
+<span>COLOR SPACE: ACES / REC.709</span>
+</div>
+</div>
+<!-- 02 Data Management -->
+<section class="px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start bg-surface-container-low py-24">
+<div class="md:col-span-8 md:order-2">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High-tech server rack setup with blinking LED lights and thick braided cables in a sleek minimalist equipment bay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvxInJu0IOYmMuoQlPuVkItJGfgvo67EApjS0R0hxAgkHFqORQ3KLlKTrsTVfCa513n8Oi0uYowjRN2hS_YqLau-FwAq62xbaSRk1q-V9bko1OrqWzK2VypMlC2jxftXu5Ycb4JsQtn0N5JwTfxg3MaArcHrnDFdQr23z7qVI2IW08GxgZvDWw9A1n5sB-BhCFANu8JrhsSqyRVEns_k-0MIoNH8ewxrg0u3f9RYUroimzI3U91VWcXoL0qNIWYiJSBurl0aJ2kug"/>
+</div>
+</div>
+<div class="md:col-span-4 md:order-1 sticky top-12">
+<div class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-2">Service // 02</div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">DATA MANAGEMENT</h2>
+<p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+                    Secure, high-speed offloading and checksum verification. Our workflow ensures zero-loss data integrity with triple-redundant backup systems and comprehensive reporting.
+                </p>
+<div class="bg-white p-6 space-y-4">
+<span class="font-label text-[9px] tracking-[0.1em] uppercase block opacity-60">Primary Hardware &amp; Software</span>
+<ul class="space-y-2">
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> SHOTPUT PRO / SILVERSTACK
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> RAID 5/6 ENTERPRISE STORAGE
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> LTO-9 ARCHIVAL SYSTEMS
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 03 Dailies Transcoding -->
+<section class="px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-4 sticky top-12">
+<div class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-2">Service // 03</div>
+<h2 class="font-headline text-4xl font-bold tracking-tight mb-6">DAILIES TRANSCODING</h2>
+<p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+                    Next-day editorial and review files delivered with perfect sync and metadata accuracy. We support all major industry formats with customized lookup tables applied.
+                </p>
+<div class="bg-surface-container-highest p-6 space-y-4">
+<span class="font-label text-[9px] tracking-[0.1em] uppercase block opacity-60">Primary Hardware &amp; Software</span>
+<ul class="space-y-2">
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> DAVINCI RESOLVE STUDIO
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> APPLE MAC STUDIO M2 ULTRA
+                        </li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary"></span> PRORES 4444 / DNXHR
+                        </li>
+</ul>
+</div>
+</div>
+<div class="md:col-span-8">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Technical screen view of a video transcoding interface with progress bars, waveform monitors, and source metadata labels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz6VFp8Phq0zwvsWU4s-zLt08p54bUZtuUUHnzmdWP1P-JtixihO7G1KZiIdA4ZKIqe6-0BorSulYiC2UY-hHxokZTIR_UyfOFtiitO4cehuedd6nL-lgwI7VRO7EZfgtFNocJIFJuIfFmHWABIwm5Rd0hAV_iAYOLREPt0jOJcNzGnjbVSq1Jbl6TpbcVn1UDSoqxgA2gGMB9jEIA0C6PpXWW-wRv0mq16qL8xlSZwgbG9AQVar4dfhXIvDo03hVEYRQH_g9OYtM"/>
+</div>
+</div>
+</section>
+<!-- 04 Signal Distribution -->
+<section class="px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start bg-black text-white py-32">
+<div class="md:col-span-6">
+<div class="font-label text-[10px] tracking-[0.2em] uppercase text-neutral-500 mb-2">Service // 04</div>
+<h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tight mb-8">SIGNAL DISTRIBUTION</h2>
+<p class="font-body text-neutral-400 text-lg mb-12 leading-relaxed max-w-lg">
+                    Comprehensive video village architecture. Wireless zero-latency monitoring for critical crew and calibrated iPad streaming for remote stakeholders.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="font-label text-[9px] tracking-[0.1em] uppercase block text-neutral-500 mb-3">Transmission</span>
+<ul class="space-y-2">
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold">TERADEK BOLT 4K</li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold">SMALLHD 1303 HDR</li>
+</ul>
+</div>
+<div>
+<span class="font-label text-[9px] tracking-[0.1em] uppercase block text-neutral-500 mb-3">Web Streaming</span>
+<ul class="space-y-2">
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold">QTAKE CLOUD</li>
+<li class="font-label text-[11px] tracking-[0.05em] uppercase font-semibold">TERADEK CORE</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md:col-span-6">
+<div class="aspect-square bg-neutral-900 overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="Abstract view of intricate cables and SDI connections on a professional video routing panel with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLkeuDkzJyY375WTmENr5LxKkx2mv83la74JxPke1gXE-i4XzMiIYYCEbiG9Yy9tS4NnIvXzfb3j505RMyCYPazmLCw1cLuFXBxuHLDJRe6qfD9Mqk5tXoASZ-1rmXG5hHBV0_f9wc-C_sCRsju8PmeDjiGvTvi1GRb-yUTlLym4aQh4h08Uk_2ioPvVdjh1Ry8FcjzDkHSYcmWD9hBgP7oTybsAbyCR3rOxCM7vxufZ526Z0uSGm4oOYH3QPuqCsCQ4JwRXpXA_c"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="glass-overlay p-8 text-black border border-white/20">
+<span class="font-label text-[10px] tracking-[0.3em] uppercase block mb-2">Technical Hub</span>
+<div class="font-headline text-3xl font-extrabold tracking-tighter">12G-SDI INFRASTRUCTURE</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Call to Action -->
+<section class="px-12 py-32 border-t border-neutral-200 text-center">
+<div class="max-w-2xl mx-auto">
+<h3 class="font-headline text-4xl font-bold tracking-tight mb-8 uppercase">Ready for Deployment?</h3>
+<p class="font-body text-on-surface-variant mb-12">Download our full inventory and technical specification sheet for your production planning.</p>
+<button class="bg-black text-on-primary font-['Manrope'] tracking-[0.1em] uppercase text-xs font-bold px-12 py-5 inline-flex items-center gap-4 hover:bg-neutral-800 transition-colors">
+                REQUEST TECHNICAL SPECS
+                <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f9f9f9] dark:bg-neutral-950 w-full border-t border-neutral-200 dark:border-neutral-800">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 gap-6">
+<div class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500">
+                © 2024 OPTICAL PRECISION. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex space-x-12">
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">INSTAGRAM</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">VIMEO</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">LINKEDIN</a>
+</div>
+</div>
+</footer>
+</body></html>

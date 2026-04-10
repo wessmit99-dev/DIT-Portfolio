@@ -1,0 +1,29 @@
+{
+  "theme": {
+    "colors": {
+      "canvas": "#131313",
+      "surface-1": "#1c1c1c",
+      "surface-2": "#242424",
+      "surface-3": "#353535",
+      "accent": "#00e5ff",
+      "accent-light": "#c3f5ff",
+      "text-primary": "#f5f5f5",
+      "text-secondary": "#a0a0a0",
+      "text-muted": "#666666",
+      "text-inverse": "#131313"
+    },
+    "typography": {
+      "display": ["Space Grotesk", "sans-serif"],
+      "body": ["Inter", "sans-serif"]
+    },
+    "spacing": {
+      "nav-height": "72px",
+      "container-max": "1280px"
+    },
+    "effects": {
+      "nav-blur": "24px",
+      "radius-sm": "0.125rem",
+      "radius-md": "0.25rem"
+    }
+  }
+}

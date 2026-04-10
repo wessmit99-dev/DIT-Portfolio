@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#474747",
+                    "on-secondary-fixed-variant": "#3b3b3b",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-fixed": "#ffffff",
+                    "tertiary-fixed-dim": "#474747",
+                    "primary-fixed": "#5e5e5e",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-bright": "#f9f9f9",
+                    "primary-fixed-dim": "#474747",
+                    "secondary": "#5f5e5e",
+                    "on-primary": "#e2e2e2",
+                    "tertiary": "#3b3b3b",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#c6c6c6",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c6c6c6",
+                    "tertiary-fixed": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-tertiary": "#e2e2e2",
+                    "secondary-container": "#d6d4d3",
+                    "primary-container": "#3b3b3b",
+                    "secondary-fixed-dim": "#acabab",
+                    "surface-container": "#eeeeee",
+                    "background": "#f9f9f9",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#5e5e5e",
+                    "outline": "#777777",
+                    "on-secondary-container": "#1b1c1c",
+                    "on-primary-fixed-variant": "#e2e2e2",
+                    "on-error-container": "#410002",
+                    "on-tertiary-container": "#ffffff",
+                    "secondary-fixed": "#c8c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-container": "#747474",
+                    "on-tertiary-fixed": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); }
+        select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<header class="bg-[#f9f9f9] dark:bg-neutral-950 w-full border-0">
+<nav class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-black dark:text-white font-headline">
+                PRECISION OPTICS
+            </div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">HOME</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">PROJECTS</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" href="#">SERVICES</a>
+<a class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white border-b-2 border-black dark:border-white pb-1" href="#">CONTACT</a>
+</div>
+<button class="font-['Manrope'] tracking-[0.05em] uppercase text-[11px] font-semibold text-black dark:text-white hover:opacity-70 transition-opacity duration-300 border-b border-black">
+                GET IN TOUCH
+            </button>
+</nav>
+<div class="bg-neutral-100 dark:bg-neutral-900 h-[1px] w-full"></div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section: Intentional Asymmetry -->
+<section class="max-w-[1920px] mx-auto px-12 pt-24 pb-12 flex flex-col md:flex-row gap-24">
+<div class="md:w-1/2">
+<span class="font-label uppercase tracking-[0.2em] text-[10px] text-outline font-semibold mb-4 block">AVAILABLE FOR WORLDWIDE ASSIGNMENTS</span>
+<h1 class="font-headline text-[clamp(3.5rem,10vw,7rem)] font-extrabold leading-[0.9] tracking-tighter mb-12">
+                    LET'S<br/>CONNECT
+                </h1>
+<div class="space-y-8 mt-12">
+<p class="font-body text-lg text-on-surface-variant max-w-md leading-relaxed">
+                        Technical precision meets creative vision. For inquiries regarding Digital Imaging Technician services, color workflow consultation, or equipment rentals, please utilize the coordination portal.
+                    </p>
+<div class="pt-8 space-y-4">
+<div class="flex items-center gap-4">
+<span class="font-label uppercase tracking-widest text-[9px] text-outline">TECHNICAL SPECIFICATIONS</span>
+<div class="h-[1px] flex-grow bg-outline-variant opacity-20"></div>
+</div>
+<button class="flex items-center gap-3 group">
+<span class="material-symbols-outlined text-primary text-xl">download</span>
+<span class="font-label uppercase tracking-widest text-[11px] font-bold group-hover:underline decoration-1 underline-offset-4 transition-all">DOWNLOAD TECHNICAL SPECS</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Form Container: Tonal Layering (Surface Shift) -->
+<div class="md:w-1/2 bg-surface-container-low p-12 lg:p-20 relative">
+<div class="absolute top-0 right-0 p-8">
+<span class="font-label text-[10px] tracking-[0.3em] text-outline-variant uppercase">REF: CONTACT_v04</span>
+</div>
+<form class="space-y-12">
+<!-- Input Field: Minimalist Bottom Line Style -->
+<div class="relative">
+<label class="block font-label uppercase tracking-widest text-[9px] text-outline mb-2">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-all font-body text-base placeholder:text-neutral-300" placeholder="ENTER NAME" type="text"/>
+</div>
+<div class="relative">
+<label class="block font-label uppercase tracking-widest text-[9px] text-outline mb-2">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-all font-body text-base placeholder:text-neutral-300" placeholder="NAME@WORK.COM" type="email"/>
+</div>
+<div class="relative">
+<label class="block font-label uppercase tracking-widest text-[9px] text-outline mb-2">Project Type</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-all font-body text-base cursor-pointer">
+<option>COMMERCIAL PRODUCTION</option>
+<option>FEATURE FILM</option>
+<option>COLOR PIPELINE CONSULTANCY</option>
+<option>ON-SET DIT SERVICES</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 bottom-4 pointer-events-none text-neutral-400">expand_more</span>
+</div>
+<div class="relative">
+<label class="block font-label uppercase tracking-widest text-[9px] text-outline mb-2">Inquiry Details</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-primary transition-all font-body text-base resize-none placeholder:text-neutral-300" placeholder="DESCRIBE PROJECT SCOPE &amp; TIMELINE" rows="4"></textarea>
+</div>
+<div class="pt-6">
+<button class="w-full md:w-auto bg-primary text-on-primary px-16 py-5 font-label uppercase tracking-[0.2em] text-[12px] font-bold scale-100 active:scale-[0.98] transition-all hover:bg-neutral-800 flex items-center justify-center gap-4">
+                            SEND MESSAGE
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Technical Strip: Signature Custom Component -->
+<section class="mt-24">
+<div class="bg-surface-container-highest w-full py-4 px-12 flex justify-between items-center overflow-hidden">
+<div class="flex gap-12 whitespace-nowrap">
+<span class="font-label uppercase tracking-widest text-[9px] text-on-surface-variant font-medium">LOCATION: BERLIN // LONDON // TOKYO</span>
+<span class="font-label uppercase tracking-widest text-[9px] text-on-surface-variant font-medium">ENCRYPTION: AES-256</span>
+<span class="font-label uppercase tracking-widest text-[9px] text-on-surface-variant font-medium">RESPONSE TIME: &lt; 12 HOURS</span>
+<span class="font-label uppercase tracking-widest text-[9px] text-on-surface-variant font-medium">CLIENT PORTAL: ACTIVE</span>
+</div>
+<div class="hidden lg:block">
+<span class="font-label uppercase tracking-widest text-[9px] text-primary font-bold">LAT: 52.5200° N | LONG: 13.4050° E</span>
+</div>
+</div>
+</section>
+<!-- Aesthetic Imagery Component -->
+<section class="px-12 py-32 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-[1920px] mx-auto">
+<div class="aspect-[16/7] overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Monochromatic close-up of high-end camera lens elements with sharp reflections and deep shadows in a clean studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1FtnuYFOL6odSnPeRcq-6pyeiU0NopAq1cIsSBp4MmLgUqureLZlbodsWfxAtobXaXNWFbIkJDPmBCXuUGUsro_tP8hsL-VQceJjTeZ69MpjkkCVHotVo6Lca2U16SIfz-0rSHsavKTrlCYOo1YylOYaDFUxzW5RXi6U-YrAni8v0MQnVlpIQMxBDWacDTZKbAu-NYdHDVWMYxhNEmI33OanEZPB7N_ziGKf2Vb1zhigfj6Cazz30yGziDC8aUiEIF2u8vAdBsR0"/>
+</div>
+<div class="aspect-[16/7] overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-90 transition-transform duration-700 hover:scale-105" data-alt="Cinematic wide shot of a professional DIT monitoring station in a dark room with glowing calibrated monitors and high-tech equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl0Ic9IJvkn7l12RotB5RKw0833-GX7cR-QY-csLveGywqybtrQxOLDsKwS3bYJ3VO8eBgWRLy0_6AoRG6KC9vQ_Db-SQNOoxUyCObYvVSNg1oyYXcsTvqUIiXXQbs1ijDq8nFh7cQyMpP_AGQ9GRsGzq6395079gzgw8EX6uRw4hvXNmATP_Le3iFi3eqUmDzzcuGrs75P30nJxKOVmqCw4WVaCXFBTTlzIHZ6aTerwDHjAZnzRHrpC5s8TNLU0woPO_x3I8-CiU"/>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#f9f9f9] dark:bg-neutral-950 w-full border-t border-neutral-200 dark:border-neutral-800">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-12 gap-6 max-w-[1920px] mx-auto">
+<div class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500">
+                © 2024 OPTICAL PRECISION. ALL RIGHTS RESERVED.
+            </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">INSTAGRAM</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">VIMEO</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[9px] font-medium text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white transition-colors underline decoration-1 underline-offset-4" href="#">LINKEDIN</a>
+</div>
+</div>
+</footer>
+</body></html>
