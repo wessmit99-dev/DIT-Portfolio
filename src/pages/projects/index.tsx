@@ -1,20 +1,16 @@
 import { siteData } from '@/data/mockData';
-import { useProjectFilter } from '@/hooks/useProjectFilter';
 import Button from '@/components/ui/Button';
 import ProjectsHero from './ProjectsHero';
-import FilterTabs from './FilterTabs';
-import ProjectGrid from './ProjectGrid';
+import ProjectList from './ProjectList';
 import TechnicalStandards from './TechnicalStandards';
 
 export default function ProjectsPage() {
-  const { heroHeadline, heroSubheadline, filterTabs, projects, technicalStandards, footerCtaPortfolioLabel, footerCtaContactLabel, footerCtaPortfolioHref, footerCtaContactHref } = siteData.projects;
-  const { activeTab, setActiveTab, filtered } = useProjectFilter(projects);
+  const { heroHeadline, heroSubheadline, projects, technicalStandards, footerCtaPortfolioLabel, footerCtaContactLabel, footerCtaPortfolioHref, footerCtaContactHref } = siteData.projects;
 
   return (
     <>
       <ProjectsHero headline={heroHeadline} subheadline={heroSubheadline} />
-      <FilterTabs tabs={filterTabs} activeTab={activeTab} onTabChange={setActiveTab} />
-      <ProjectGrid projects={filtered} />
+      <ProjectList projects={projects} />
       <TechnicalStandards standards={technicalStandards} />
 
       {/* Footer CTA */}

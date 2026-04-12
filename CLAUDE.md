@@ -27,7 +27,6 @@ src/
 │   └── index.ts            re-exports all TypeScript interfaces
 ├── hooks/
 │   ├── useScrollEffect.ts  nav glassmorphism on scroll
-│   ├── useProjectFilter.ts project filter tab logic
 │   └── useContactForm.ts   contact form state + validation
 ├── components/
 │   ├── Nav.tsx             fixed, glassmorphism on scroll
@@ -39,7 +38,7 @@ src/
 └── pages/
     ├── home/               Hero, SpecsStrip, ServicesTeaser, FeaturedProjects
     ├── services/           ServiceItem, ServicesFooterCTA
-    ├── projects/           ProjectsHero, FilterTabs, ProjectGrid, ProjectCard, TechnicalStandards
+    ├── projects/           ProjectsHero, ProjectList, TechnicalStandards
     └── contact/            ContactHero, ContactForm, ContactInfo
 
 .stitch/designs/            downloaded Stitch HTML + PNG reference files
@@ -53,7 +52,7 @@ scripts/                    fetch-stitch.sh, validate.js
 |-------|------|-------------|
 | `/` | Home | Hero with bg image, specs strip, services teaser, featured projects grid |
 | `/services` | Services | 4 numbered services with tool badges and technical specs |
-| `/projects` | Projects | Filterable grid (All / Narrative / Commercial), technical standards |
+| `/projects` | Projects | Credit list view grouped by Long Form / Commercials toggle, technical standards |
 | `/contact` | Contact | Form (name, email, project type, message) + info panel with coordinates |
 
 ## Editing Content
@@ -62,7 +61,10 @@ scripts/                    fetch-stitch.sh, validate.js
 
 - Change your name/brand → `siteData.nav.brandName`
 - Update hero headline/body → `siteData.home.hero`
-- Add/edit projects → `siteData.projects.projects[]` (title, category, year, camera, lens, format, imageUrl)
+- Add/edit projects → `siteData.projects.projects[]` (title, category, year, productionCompany, dop, role, imageUrl)
+  - Long form categories: `'Feature Film'` | `'TV Series'` | `'Netflix Series'` | `'Reality'`
+  - Commercial category: `'Commercial'`
+  - Long form and commercials are split into separate views via a toggle on the projects page
 - Update services → `siteData.services.services[]`
 - Change contact info → `siteData.contact.infoPanel`, `coordinates`
 - Update social links → `siteData.footer.socialLinks`
