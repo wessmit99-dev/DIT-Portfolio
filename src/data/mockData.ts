@@ -48,42 +48,13 @@ export interface HeroData {
   readonly backgroundImageAlt: string;
 }
 
-export interface SpecItem {
-  readonly label: string;
-  readonly value: string;
-}
-
-export interface SpecsStripData {
-  readonly items: readonly SpecItem[];
-  readonly trailing: string;
-}
-
-export interface ServicesTeaserItem {
-  readonly number: string;
-  readonly title: string;
+export interface ToolsGridItem {
+  readonly name: string;
   readonly description: string;
-  readonly href: string;
 }
 
-export interface ServicesTeaserData {
-  readonly eyebrow: string;
-  readonly headline: string;
-  readonly body: string;
-  readonly items: readonly ServicesTeaserItem[];
-}
-
-export interface FeaturedProject {
-  readonly id: string;
-  readonly title: string;
-  readonly category: string;
-  readonly role: string;
-  readonly imageUrl: string;
-  readonly href: string;
-}
-
-export interface FeaturedProjectsData {
-  readonly sectionLabel: string;
-  readonly projects: readonly FeaturedProject[];
+export interface ToolsGridData {
+  readonly items: readonly ToolsGridItem[];
 }
 
 // ─── Services Page ────────────────────────────────────────────────────────────
@@ -104,6 +75,7 @@ export interface ServiceDetail {
   readonly description: string;
   readonly tools: readonly ServiceTool[];
   readonly specs: readonly ServiceSpec[];
+  readonly imageUrl?: string;
 }
 
 export interface ServicesPageData {
@@ -159,10 +131,32 @@ export interface ContactInfoItem {
   readonly value: string;
 }
 
+export interface AgentData {
+  readonly name: string;
+  readonly agency: string;
+  readonly territory: string;
+  readonly email: string;
+  readonly secondEmail: string;
+  readonly phone: string;
+  readonly logoUrl: string;
+  readonly website: string;
+}
+
+export interface GearPartnerData {
+  readonly name: string;
+  readonly description: string;
+  readonly email: string;
+  readonly phone: string;
+  readonly website: string;
+  readonly logoUrl: string;
+}
+
 export interface ContactPageData {
   readonly heroEyebrow: string;
   readonly heroHeadline: string;
   readonly heroSubheadline: string;
+  readonly email: string;
+  readonly phone: string;
   readonly formLabels: {
     readonly fullName: string;
     readonly email: string;
@@ -176,6 +170,23 @@ export interface ContactPageData {
     readonly lat: string;
     readonly lng: string;
   };
+  readonly agents: readonly AgentData[];
+  readonly gearPartner: GearPartnerData;
+}
+
+// ─── Gallery Page ─────────────────────────────────────────────────────────────
+
+export interface GalleryImage {
+  readonly id: string;
+  readonly src: string;
+  readonly alt: string;
+  readonly caption?: string;
+}
+
+export interface GalleryPageData {
+  readonly heroHeadline: string;
+  readonly heroSubheadline: string;
+  readonly images: readonly GalleryImage[];
 }
 
 // ─── Root Site Data ───────────────────────────────────────────────────────────
@@ -185,13 +196,12 @@ export interface SiteData {
   readonly footer: FooterData;
   readonly home: {
     readonly hero: HeroData;
-    readonly specsStrip: SpecsStripData;
-    readonly servicesTeaser: ServicesTeaserData;
-    readonly featuredProjects: FeaturedProjectsData;
+    readonly toolsGrid: ToolsGridData;
   };
   readonly services: ServicesPageData;
   readonly projects: ProjectsPageData;
   readonly contact: ContactPageData;
+  readonly gallery: GalleryPageData;
 }
 
 // =============================================================================
@@ -205,6 +215,7 @@ export const siteData: SiteData = {
       { label: 'HOME',     href: '/' },
       { label: 'PROJECTS', href: '/projects' },
       { label: 'SERVICES', href: '/services' },
+      { label: 'GALLERY',  href: '/gallery' },
       { label: 'CONTACT',  href: '/contact' },
     ],
     ctaLabel: 'GET IN TOUCH',
@@ -214,94 +225,42 @@ export const siteData: SiteData = {
   footer: {
     copyright: '© 2024 WES SMIT. ALL RIGHTS RESERVED.',
     socialLinks: [
-      { platform: 'Instagram', href: 'https://instagram.com/', ariaLabel: 'Instagram' },
-      { platform: 'Vimeo',     href: 'https://vimeo.com/',     ariaLabel: 'Vimeo' },
-      { platform: 'LinkedIn',  href: 'https://linkedin.com/',  ariaLabel: 'LinkedIn' },
+      { platform: 'Instagram', href: 'https://instagram.com/wes.smit', ariaLabel: 'Instagram' },
+      { platform: 'LinkedIn',  href: 'https://www.linkedin.com/in/wesley-smit/',  ariaLabel: 'LinkedIn' },
     ],
   },
 
   home: {
     hero: {
-      eyebrow:             'Digital Imaging Excellence',
+      eyebrow:             'Digital Imaging Technician',
       headline:            'Enhance Your Production',
       body:                'Elevating cinematic narratives through rigorous data management and advanced color science. Bridging the gap between creative vision and technical execution on the highest-stakes productions.',
       primaryCtaLabel:     'SERVICES',
       primaryCtaHref:      '/services',
       secondaryCtaLabel:   'CONTACT',
       secondaryCtaHref:    '/contact',
-      backgroundImageUrl:  '/hero.jpg',
+      backgroundImageUrl:  '/hero.JPG',
       backgroundImageAlt:  'Cinema camera on a sandy film set with camouflage netting and equipment',
     },
-    specsStrip: {
+    toolsGrid: {
       items: [
-        { label: 'RESOLUTION', value: '4.6K Open Gate' },
-        { label: 'CODEC',      value: 'ARRIRAW / ProRes 4444 XQ' },
-        { label: 'GRADING',    value: 'Live Color Grading' },
-        { label: 'PIPELINE',   value: 'Workflow Architecture' },
-      ],
-      trailing: 'Live Color Grading & Workflow Architecture',
-    },
-    servicesTeaser: {
-      eyebrow:  'Vision and Fidelity',
-      headline: 'TECHNICAL PRECISION',
-      body:     'The modern digital negative demands more than just storage; it requires a deep understanding of sensor physics and color pipeline integrity. Every frame treated as a masterwork.',
-      items: [
-        {
-          number:      '01',
-          title:       'ON-SET COLOR',
-          description: 'Real-time HDR grading and exposure monitoring to lock in the look before the camera wraps.',
-          href:        '/services',
-        },
-        {
-          number:      '02',
-          title:       'DATA ARCHITECTURE',
-          description: 'Triple-redundant LTO-9 archival and secure high-speed dailies delivery for global workflows.',
-          href:        '/services',
-        },
-      ],
-    },
-    featuredProjects: {
-      sectionLabel: 'SELECTED WORKS',
-      projects: [
-        {
-          id:       'noir-city',
-          title:    'NOIR CITY',
-          category: 'Feature Film',
-          role:     'Color Management',
-          imageUrl: '',
-          href:     '/projects',
-        },
-        {
-          id:       'monolith',
-          title:    'MONOLITH',
-          category: 'Commercial',
-          role:     'DIT Services',
-          imageUrl: '',
-          href:     '/projects',
-        },
-        {
-          id:       'prism',
-          title:    'PRISM',
-          category: 'Short Film',
-          role:     'Workflow Design',
-          imageUrl: '',
-          href:     '/projects',
-        },
-        {
-          id:       'island-of-silence',
-          title:    'ISLAND OF SILENCE',
-          category: 'Documentary',
-          role:     'Raw Pipeline',
-          imageUrl: '',
-          href:     '/projects',
-        },
+        { name: 'Pomfort LiveGrade',   description: 'Real-time on-set color grading' },
+        { name: 'Pomfort Silverstack', description: 'Data offload, QC and media management' },
+        { name: 'Pomfort ReelTime',    description: 'Live wireless monitoring and set communication' },
+        { name: 'DaVinci Resolve',     description: 'Color grading and dailies output' },
+        { name: 'Nobe Omniscope',      description: 'Real-time signal analysis and waveform monitoring' },
+        { name: 'CameraKit',           description: 'Camera metadata and lens data logging' },
+        { name: 'LensKit',             description: 'Lens profiling and distortion mapping' },
+        { name: 'Arri Companion',      description: 'ARRI camera control and metadata' },
+        { name: 'Disk Catalog Maker',  description: 'Media catalog and archive indexing' },
+        { name: 'Parashoot',           description: 'Camera card formatting' },
       ],
     },
   },
 
   services: {
-    eyebrow:         'Technical Services',
-    headline:        'THE TOOLKIT',
+    eyebrow:         '',
+    headline:        'Technical Services.',
     footerCtaLabel:  'REQUEST TECHNICAL SPECS',
     footerCtaHref:   '/contact',
     services: [
@@ -309,11 +268,12 @@ export const siteData: SiteData = {
         id:          'live-grading',
         number:      '01',
         title:       'Live Grading',
+        imageUrl:    '/livegrade.png',
         description: 'Real-time color manipulation and look development on-set using calibrated reference monitoring. CDL-based workflow for seamless handoff to post.',
         tools: [
           { name: 'Pomfort LiveGrade Studio' },
-          { name: 'Flanders Scientific XM310K' },
-          { name: 'Blackmagic Teranex Mini' },
+          { name: 'Flanders Scientific' },
+          { name: 'CDL' },
         ],
         specs: [
           { key: 'COLOR SPACE', value: 'ACES / LogC3 / LogC4' },
@@ -322,15 +282,47 @@ export const siteData: SiteData = {
         ],
       },
       {
-        id:          'data-management',
+        id:          'on-set-workflow-management',
         number:      '02',
-        title:       'Data Management',
-        description: 'Secure, high-speed offloading with checksum verification at every stage. Triple-redundant backup strategy with RAID and LTO tape archival.',
+        title:       'On Set Workflow Management',
+        imageUrl:    '/on set workflow.JPG',
+        description: 'End-to-end coordination of on-set data, color, and media pipeline — from camera offload to editorial handoff. Ensuring every department stays in sync and nothing falls through the cracks.',
         tools: [
-          { name: 'ShotPut Pro' },
-          { name: 'Silverstack' },
-          { name: 'Enterprise RAID 5/6' },
-          { name: 'LTO-9 Archival' },
+          { name: 'Pomfort Silverstack' },
+          { name: 'DaVinci Resolve' },
+          { name: 'Nobe Omniscope' },
+        ],
+        specs: [
+          { key: 'OFFLOAD',  value: 'Dual-destination verified copy' },
+          { key: 'REPORTS',  value: 'Per-card camera & sound reports' },
+          { key: 'HANDOFF',  value: 'Editorial-ready folder structure' },
+        ],
+      },
+      {
+        id:          'on-set-qc',
+        number:      '03',
+        title:       'On Set QC',
+        imageUrl:    '/QC.webp',
+        description: 'Rigorous image quality control on set — monitoring exposure, focus, noise, and codec integrity in real time to protect the image before it leaves the camera.',
+        tools: [
+          { name: 'Flanders Scientific' },
+          { name: 'Pomfort Silverstack' },
+          { name: 'Nobe Omniscope' },
+        ],
+        specs: [
+          { key: 'MONITORING', value: 'Real-time HDR reference' },
+          { key: 'FORMATS',    value: 'RAW / LOG / SDR / HDR' },
+          { key: 'REPORTING',  value: 'Per-take QC logs' },
+        ],
+      },
+      {
+        id:          'data-management',
+        number:      '04',
+        title:       'Data Management',
+        imageUrl:    '/data.jpg',
+        description: 'Secure, high-speed offloading with checksum verification at every stage. Triple-redundant backup strategy with DIT RAID and on-set shuttle drives. Detailed reports tailored to surface the information post needs most.',
+        tools: [
+          { name: 'Pomfort Silverstack' },
         ],
         specs: [
           { key: 'THROUGHPUT', value: 'Up to 3.6 GB/s' },
@@ -338,43 +330,11 @@ export const siteData: SiteData = {
           { key: 'REDUNDANCY', value: '3:2:1 Strategy' },
         ],
       },
-      {
-        id:          'dailies-transcoding',
-        number:      '03',
-        title:       'Dailies Transcoding',
-        description: 'Next-day editorial and review file delivery with perfect sync. Full color pipeline from camera original to viewer-ready dailies.',
-        tools: [
-          { name: 'DaVinci Resolve Studio' },
-          { name: 'Mac Studio M2 Ultra' },
-        ],
-        specs: [
-          { key: 'OUTPUT',   value: 'ProRes 4444 / DNxHR' },
-          { key: 'DELIVERY', value: 'Aspera / Frame.io' },
-          { key: 'SYNC',     value: 'Tentacle Sync' },
-        ],
-      },
-      {
-        id:          'signal-distribution',
-        number:      '04',
-        title:       'Signal Distribution',
-        description: 'Comprehensive video village architecture with wireless zero-latency 4K distribution and calibrated monitor deployment.',
-        tools: [
-          { name: 'Teradek Bolt 4K' },
-          { name: 'SmallHD Displays' },
-          { name: 'qTake' },
-          { name: 'Teradek Core' },
-        ],
-        specs: [
-          { key: 'LATENCY', value: '< 1ms zero-delay' },
-          { key: 'RANGE',   value: 'Up to 1500ft' },
-          { key: 'CLOUD',   value: 'Remote streaming' },
-        ],
-      },
     ],
   },
 
   projects: {
-    heroHeadline:    'Visual Precision.',
+    heroHeadline:    'Projects.',
     heroSubheadline: 'Selected Works 2022—2026',
     projects: [
       // ── 2025/2026 ──────────────────────────────────────────────────────────
@@ -952,8 +912,10 @@ export const siteData: SiteData = {
 
   contact: {
     heroEyebrow:     'AVAILABLE FOR WORLDWIDE ASSIGNMENTS',
-    heroHeadline:    "LET'S CONNECT",
+    heroHeadline:    "Let's Connect.",
     heroSubheadline: 'Technical precision meets creative vision.',
+    email:           'wes@monstrum.co.za',
+    phone:           '083 285 4258',
     formLabels: {
       fullName:       'Full Name',
       email:          'Email Address',
@@ -976,5 +938,43 @@ export const siteData: SiteData = {
       lat: '52.5200° N',
       lng: '13.4050° E',
     },
+    agents: [
+      {
+        name:      'Exposure Crew',
+        agency:    '',
+        territory: 'JOHANNESBURG',
+        email:     'Daphne@exposurecrew.tv',
+        secondEmail: '',
+        phone:     '083 218 0859',
+        logoUrl:   '/logos/exposure-crew.png',
+        website:   'https://www.exposurecrew.tv/',
+      },
+      {
+        name:      'Star Film Crew',
+        agency:    '',
+        territory: 'CAPE TOWN',
+        email:     'angelica@starfilmcrew.co.za',
+        secondEmail: 'mel@starfilmcrew.co.za',
+        phone:     '076 980 2160',
+        logoUrl:   '/logos/star-crew.png',
+        website:   'https://starfilmcrew.co.za/#!/up',
+      },
+    ],
+    gearPartner: {
+      name:        'Monstrum Digital',
+      description: '',
+      email:       'kirsty@monstrum.co.za',
+      phone:       '076 676 2519',
+      website:     'https://www.monstrum.co.za/',
+      logoUrl:     '/logos/Monstrum.webp',
+    },
+  },
+
+  gallery: {
+    heroHeadline:    'Behind The Scenes.',
+    heroSubheadline: 'On-set stills from production.',
+    images: [
+      { id: '1', src: '/gallery/IMG_9196.jpg', alt: 'On-set crew in rain-drenched alley with atmospheric backlight' },
+    ],
   },
 };

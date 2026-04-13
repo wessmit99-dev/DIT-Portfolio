@@ -1,18 +1,14 @@
 import { siteData } from '@/data/mockData';
 import Hero from './Hero';
-import SpecsStrip from './SpecsStrip';
-import ServicesTeaser from './ServicesTeaser';
-import FeaturedProjects from './FeaturedProjects';
+import ToolsGrid from './ToolsGrid';
 
 export default function HomePage() {
-  const { hero, specsStrip, servicesTeaser, featuredProjects } = siteData.home;
+  const { hero, toolsGrid } = siteData.home;
 
   return (
     <>
       <Hero data={hero} />
-      <SpecsStrip data={specsStrip} />
-      <ServicesTeaser data={servicesTeaser} />
-      <FeaturedProjects data={featuredProjects} />
+      <ToolsGrid data={toolsGrid} />
     </>
   );
 }
