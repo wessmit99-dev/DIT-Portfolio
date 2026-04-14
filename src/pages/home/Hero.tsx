@@ -21,12 +21,12 @@ export default function Hero({ data }: HeroProps) {
       {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)' }}
+        style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.3) 100%)' }}
       />
 
       {/* Content */}
       <div
-        className="relative z-10 flex flex-col justify-center px-12 mx-auto h-full"
+        className="relative z-10 flex flex-col justify-center px-4 sm:px-12 mx-auto h-full"
         style={{ maxWidth: '1920px', paddingTop: '72px', minHeight: '100vh' }}
       >
         <span
@@ -48,13 +48,13 @@ export default function Hero({ data }: HeroProps) {
         </h1>
 
         <p
-          className="text-lg leading-relaxed max-w-2xl mb-12"
+          className="text-base sm:text-lg leading-relaxed max-w-2xl mb-12"
           style={{ color: 'rgba(255,255,255,0.75)' }}
         >
           {data.body}
         </p>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <Button variant="primary" href={data.primaryCtaHref}>
             {data.primaryCtaLabel}
           </Button>
