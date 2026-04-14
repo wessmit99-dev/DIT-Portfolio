@@ -1,9 +1,8 @@
 import { siteData } from '@/data/mockData';
-import SectionLabel from '@/components/ui/SectionLabel';
 import ServiceItem from './ServiceItem';
 
 export default function ServicesPage() {
-  const { eyebrow, headline, services } = siteData.services;
+  const { headline, services } = siteData.services;
 
   return (
     <>
