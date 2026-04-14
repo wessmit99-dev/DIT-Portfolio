@@ -51,7 +51,7 @@ scripts/                    fetch-stitch.sh, validate.js
 | Route | Page | Key sections |
 |-------|------|-------------|
 | `/` | Home | Hero with bg image, specs strip, services teaser, featured projects grid |
-| `/services` | Services | 4 numbered services with tool badges and technical specs |
+| `/services` | Services | 4 services with tool badges, technical specs, and optional full-bleed background images |
 | `/projects` | Projects | Credit list view grouped by Long Form / Commercials toggle, technical standards |
 | `/contact` | Contact | Form (name, email, project type, message) + info panel with coordinates |
 
@@ -66,6 +66,8 @@ scripts/                    fetch-stitch.sh, validate.js
   - Commercial category: `'Commercial'`
   - Long form and commercials are split into separate views via a toggle on the projects page
 - Update services → `siteData.services.services[]`
+  - Service order: `01 Live Grading` → `02 On Set Workflow Management` → `03 On Set QC` → `04 Data Management`
+  - Optional `imageUrl` field on each service — place images in `public/` and reference as `/filename.ext`. Renders as a full-bleed background at 20% opacity.
 - Change contact info → `siteData.contact.infoPanel`, `coordinates`
 - Update social links → `siteData.footer.socialLinks`
 
@@ -78,6 +80,18 @@ No component code changes needed for content updates.
 - **Fonts:** Space Grotesk (headlines), Inter (body)
 - **Rule:** No 1px borders for section separation — use background color shifts only
 - **Nav:** Fixed, glassmorphism (`backdrop-blur: 24px`) kicks in on scroll
+
+## Deployment
+
+- **Host:** Vercel — connected to GitHub repo `wessmit99-dev/DIT-Portfolio`
+- **Workflow:** Edit locally → commit → push to `main` → Vercel auto-deploys (~ 1 min)
+- **No manual deploy steps needed** — every push to `main` goes live automatically
+
+```bash
+git add -A
+git commit -m "your message"
+git push
+```
 
 ## Development Commands
 

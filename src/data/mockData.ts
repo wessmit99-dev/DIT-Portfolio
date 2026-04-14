@@ -50,7 +50,7 @@ export interface HeroData {
 
 export interface ToolsGridItem {
   readonly name: string;
-  readonly description: string;
+  readonly logoUrl?: string;
 }
 
 export interface ToolsGridData {
@@ -244,16 +244,16 @@ export const siteData: SiteData = {
     },
     toolsGrid: {
       items: [
-        { name: 'Pomfort LiveGrade',   description: 'Real-time on-set color grading' },
-        { name: 'Pomfort Silverstack', description: 'Data offload, QC and media management' },
-        { name: 'Pomfort ReelTime',    description: 'Live wireless monitoring and set communication' },
-        { name: 'DaVinci Resolve',     description: 'Color grading and dailies output' },
-        { name: 'Nobe Omniscope',      description: 'Real-time signal analysis and waveform monitoring' },
-        { name: 'CameraKit',           description: 'Camera metadata and lens data logging' },
-        { name: 'LensKit',             description: 'Lens profiling and distortion mapping' },
-        { name: 'Arri Companion',      description: 'ARRI camera control and metadata' },
-        { name: 'Disk Catalog Maker',  description: 'Media catalog and archive indexing' },
-        { name: 'Parashoot',           description: 'Camera card formatting' },
+        { name: 'Pomfort LiveGrade',   logoUrl: '/icons/pomfort-livegrade.png' },
+        { name: 'Pomfort Silverstack', logoUrl: '/icons/pomfort-silverstack.png' },
+        { name: 'Pomfort ReelTime',    logoUrl: '/icons/pomfort-reeltime.png' },
+        { name: 'DaVinci Resolve',     logoUrl: '/icons/DaVinci.png' },
+        { name: 'Nobe Omniscope',      logoUrl: '/icons/nobe.png' },
+        { name: 'CameraKit',           logoUrl: '/icons/camerakit.png' },
+        { name: 'LensKit',             logoUrl: '/icons/lenskit.png' },
+        { name: 'Arri Companion',      logoUrl: '/icons/arri.png' },
+        { name: 'Disk Catalog Maker',  logoUrl: '/icons/disk.png' },
+        { name: 'Parashoot',           logoUrl: '/icons/parashoot.png' },
       ],
     },
   },

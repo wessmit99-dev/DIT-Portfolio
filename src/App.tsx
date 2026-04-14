@@ -5,6 +5,7 @@ import HomePage from '@/pages/home';
 import ServicesPage from '@/pages/services';
 import ProjectsPage from '@/pages/projects';
 import ContactPage from '@/pages/contact';
+import GalleryPage from '@/pages/gallery';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/"         element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/gallery"  element={<GalleryPage />} />
           <Route path="/contact"  element={<ContactPage />} />
         </Routes>
       </main>

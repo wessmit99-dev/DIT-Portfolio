@@ -9,14 +9,8 @@ export default function ProjectsHero({ headline, subheadline }: ProjectsHeroProp
       className="px-12 pt-40 pb-16"
       style={{ backgroundColor: '#131313', maxWidth: '1920px', margin: '0 auto' }}
     >
-      <p
-        className="text-xs uppercase tracking-[0.3em] mb-4"
-        style={{ color: '#00e5ff' }}
-      >
-        {subheadline}
-      </p>
       <h1
-        className="font-bold tracking-tight"
+        className="font-bold tracking-tight mb-4"
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 'clamp(2.5rem, 5vw, 4rem)',
@@ -25,6 +19,12 @@ export default function ProjectsHero({ headline, subheadline }: ProjectsHeroProp
       >
         {headline}
       </h1>
+      <p
+        className="text-xs uppercase tracking-[0.3em]"
+        style={{ color: '#00e5ff' }}
+      >
+        {subheadline}
+      </p>
     </div>
   );
 }
