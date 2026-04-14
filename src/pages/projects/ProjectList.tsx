@@ -103,7 +103,7 @@ export default function ProjectList({ projects }: Readonly<ProjectListProps>) {
 
   return (
     <div
-      className="max-w-screen-2xl mx-auto px-12 pb-24"
+      className="max-w-screen-2xl mx-auto px-4 sm:px-12 pb-12 sm:pb-24"
       style={{ backgroundColor: 'var(--color-canvas)' }}
     >
       {/* Section toggle header */}
