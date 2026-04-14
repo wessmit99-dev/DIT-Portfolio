@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useScrollEffect } from '@/hooks/useScrollEffect';
 import Button from '@/components/ui/Button';
@@ -11,6 +11,15 @@ export interface NavProps {
 export default function Nav({ className = '' }: NavProps) {
   const scrolled = useScrollEffect(80);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [open]);
 
   return (
     <header
@@ -61,15 +70,19 @@ export default function Nav({ className = '' }: NavProps) {
 
         {/* Right side: CTA + hamburger */}
         <div className="flex items-center gap-4">
-          <Button variant="ghost" href={siteData.nav.ctaHref}>
-            {siteData.nav.ctaLabel}
-          </Button>
+          <span className="hidden sm:inline-flex">
+            <Button variant="ghost" href={siteData.nav.ctaHref}>
+              {siteData.nav.ctaLabel}
+            </Button>
+          </span>
 
           {/* Hamburger — mobile only */}
           <button
             className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 bg-transparent border-0 cursor-pointer p-0"
             onClick={() => setOpen((prev) => !prev)}
             aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
           >
             {open ? (
               <>
@@ -90,6 +103,7 @@ export default function Nav({ className = '' }: NavProps) {
       {/* Mobile slide-down menu */}
       {open && (
         <nav
+          id="mobile-nav"
           className="md:hidden px-4 pb-6 flex flex-col gap-1"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
         >
