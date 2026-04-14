@@ -8,7 +8,7 @@ export default function ServicesPage() {
     <>
       {/* Page header */}
       <div
-        className="px-12 pt-40 pb-16"
+        className="px-4 sm:px-12 pt-28 sm:pt-40 pb-12 sm:pb-16"
         style={{ backgroundColor: '#131313', maxWidth: '1920px', margin: '0 auto' }}
       >
         <h1

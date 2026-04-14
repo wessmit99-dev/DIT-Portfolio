@@ -17,7 +17,7 @@ function getInitials(name: string): string {
 export default function ToolsGrid({ data }: ToolsGridProps) {
   return (
     <section
-      className="py-24 px-12 mx-auto"
+      className="py-12 sm:py-24 px-4 sm:px-12 mx-auto"
       style={{ maxWidth: '1920px', backgroundColor: '#1c1c1c' }}
     >
       <SectionLabel label="WORKFLOW TOOLS" className="mb-12" />

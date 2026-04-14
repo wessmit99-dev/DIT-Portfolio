@@ -9,7 +9,7 @@ export interface ServiceItemProps {
 export default function ServiceItem({ data, isEven }: ServiceItemProps) {
   return (
     <article
-      className="py-24 px-12 relative overflow-hidden"
+      className="py-12 sm:py-24 px-4 sm:px-12 relative overflow-hidden"
       style={{ backgroundColor: isEven ? '#1c1c1c' : '#131313' }}
     >
       {data.imageUrl && (
