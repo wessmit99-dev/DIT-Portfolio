@@ -239,7 +239,7 @@ export const siteData: SiteData = {
       primaryCtaHref:      '/services',
       secondaryCtaLabel:   'CONTACT',
       secondaryCtaHref:    '/contact',
-      backgroundImageUrl:  '/hero.JPG',
+      backgroundImageUrl:  '/hero.jpg',
       backgroundImageAlt:  'Cinema camera on a sandy film set with camouflage netting and equipment',
     },
     toolsGrid: {
