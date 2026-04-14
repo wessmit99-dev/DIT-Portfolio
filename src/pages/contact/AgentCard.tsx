@@ -11,7 +11,7 @@ export default function AgentCard({ agent }: Readonly<AgentCardProps>) {
 
   return (
     <div
-      className="p-10 flex flex-col gap-6"
+      className="p-6 sm:p-10 flex flex-col gap-6"
       style={{ backgroundColor: '#1c1c1c' }}
     >
       {/* Logo */}

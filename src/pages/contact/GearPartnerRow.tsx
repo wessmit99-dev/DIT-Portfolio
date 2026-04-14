@@ -11,7 +11,7 @@ export default function GearPartnerRow({ partner }: Readonly<GearPartnerRowProps
 
   return (
     <div
-      className="p-10 flex flex-row items-center gap-10"
+      className="p-6 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10"
       style={{ backgroundColor: '#1c1c1c' }}
     >
       {/* Logo */}
