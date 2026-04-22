@@ -57,6 +57,12 @@ export interface ToolsGridData {
   readonly items: readonly ToolsGridItem[];
 }
 
+export interface AboutMeData {
+  readonly photos: readonly string[];
+  readonly heading: string;
+  readonly body: string;
+}
+
 // ─── Services Page ────────────────────────────────────────────────────────────
 
 export interface ServiceTool {
@@ -183,10 +189,17 @@ export interface GalleryImage {
   readonly caption?: string;
 }
 
+export interface GalleryAlbum {
+  readonly id: string;
+  readonly name: string;
+  readonly subtitle?: string;
+  readonly images: readonly GalleryImage[];
+}
+
 export interface GalleryPageData {
   readonly heroHeadline: string;
   readonly heroSubheadline: string;
-  readonly images: readonly GalleryImage[];
+  readonly albums: readonly GalleryAlbum[];
 }
 
 // ─── Root Site Data ───────────────────────────────────────────────────────────
@@ -196,6 +209,7 @@ export interface SiteData {
   readonly footer: FooterData;
   readonly home: {
     readonly hero: HeroData;
+    readonly aboutMe: AboutMeData;
     readonly toolsGrid: ToolsGridData;
   };
   readonly services: ServicesPageData;
@@ -241,6 +255,11 @@ export const siteData: SiteData = {
       secondaryCtaHref:    '/contact',
       backgroundImageUrl:  '/hero.jpg',
       backgroundImageAlt:  'Cinema camera on a sandy film set with camouflage netting and equipment',
+    },
+    aboutMe: {
+      photos: ['/Photo-2.JPG'],
+      heading: 'About Me',
+      body: `I'm a Digital Imaging Technician based in Cape Town, working across feature films, series, and commercials. On set, I bridge the gap between camera and post — managing color pipelines, building LUT workflows, and ensuring every frame is technically and aesthetically sound from the first take. I bring a methodical eye and a passion for the craft to every production I join.`,
     },
     toolsGrid: {
       items: [
@@ -973,8 +992,15 @@ export const siteData: SiteData = {
   gallery: {
     heroHeadline:    'Behind The Scenes.',
     heroSubheadline: 'On-set stills from production.',
-    images: [
-      { id: '1', src: '/gallery/IMG_9196.jpg', alt: 'On-set crew in rain-drenched alley with atmospheric backlight' },
+    albums: [
+      {
+        id: 'album-1',
+        name: 'On Set',
+        subtitle: '2024',
+        images: [
+          { id: '1', src: '/gallery/IMG_9196.jpg', alt: 'On-set crew in rain-drenched alley with atmospheric backlight' },
+        ],
+      },
     ],
   },
 };
