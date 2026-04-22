@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { siteData } from '@/data/mockData';
 import type { GalleryImage } from '@/types';
 
@@ -10,6 +10,13 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null);
 
   const activeAlbum = albums.find((a) => a.id === activeAlbumId) ?? albums[0];
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [lightbox]);
 
   return (
     <>
@@ -42,11 +49,13 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
           <>
             {/* Tab bar */}
             <div className="flex items-center gap-6 mb-8 overflow-x-auto">
-              <div className="flex items-center gap-6 shrink-0">
+              <div className="flex items-center gap-6 shrink-0" role="tablist" aria-label="Gallery albums">
                 {albums.map((album) => (
                   <button
                     key={album.id}
                     onClick={() => setActiveAlbumId(album.id)}
+                    role="tab"
+                    aria-selected={activeAlbumId === album.id}
                     className="text-xs uppercase tracking-[0.2em] transition-colors duration-150 bg-transparent border-0 p-0 cursor-pointer whitespace-nowrap"
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
@@ -57,25 +66,23 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
                   </button>
                 ))}
               </div>
-              <div className="flex-1 h-px shrink-0" style={{ backgroundColor: '#353535' }} />
+              <div className="flex-1 h-px" style={{ backgroundColor: '#353535' }} />
             </div>
 
             {/* Album header */}
-            {activeAlbum && (
-              <div className="mb-8">
-                <h2
-                  className="text-2xl font-bold"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
-                >
-                  {activeAlbum.name}
-                </h2>
-                {activeAlbum.subtitle && (
-                  <p className="mt-1 text-sm" style={{ color: '#a0a0a0' }}>
-                    {activeAlbum.subtitle}
-                  </p>
-                )}
-              </div>
-            )}
+            <div className="mb-8">
+              <h2
+                className="text-2xl font-bold"
+                style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
+              >
+                {activeAlbum.name}
+              </h2>
+              {activeAlbum.subtitle && (
+                <p className="mt-1 text-sm" style={{ color: '#a0a0a0' }}>
+                  {activeAlbum.subtitle}
+                </p>
+              )}
+            </div>
 
             {/* Image grid */}
             {activeAlbum && activeAlbum.images.length === 0 ? (
@@ -85,7 +92,7 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
                 className="grid gap-2"
                 style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))' }}
               >
-                {activeAlbum?.images.map((img) => (
+                {activeAlbum.images.map((img) => (
                   <button
                     key={img.id}
                     className="group relative overflow-hidden w-full"
