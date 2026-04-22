@@ -85,7 +85,7 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
             </div>
 
             {/* Image grid */}
-            {activeAlbum && activeAlbum.images.length === 0 ? (
+            {activeAlbum.images.length === 0 ? (
               <p style={{ color: '#a0a0a0' }}>No images in this album yet.</p>
             ) : (
               <div
