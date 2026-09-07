@@ -121,6 +121,8 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
                       <img
                         src={assetUrl(img.src)}
                         alt={img.alt}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
                       />
                       {img.caption && (

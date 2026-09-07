@@ -20,6 +20,10 @@ export const GALLERY_BUCKET = 'gallery';
 
 /** Public URL for an object stored in the `gallery` bucket. */
 export function publicImageUrl(path: string): string {
-  const clean = path.replace(/^\/+/, '');
-  return `${SUPABASE_URL}/storage/v1/object/public/${GALLERY_BUCKET}/${clean}`;
+  const encoded = path
+    .replace(/^\/+/, '')
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/');
+  return `${SUPABASE_URL}/storage/v1/object/public/${GALLERY_BUCKET}/${encoded}`;
 }
