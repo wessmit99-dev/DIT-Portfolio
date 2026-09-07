@@ -1,5 +1,6 @@
 import SectionLabel from '@/components/ui/SectionLabel';
 import type { ToolsGridData } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface ToolsGridProps {
   readonly data: ToolsGridData;
@@ -26,7 +27,7 @@ export default function ToolsGrid({ data }: ToolsGridProps) {
           <div key={item.name} className="flex flex-col items-center gap-3 text-center">
             {item.logoUrl ? (
               <img
-                src={item.logoUrl}
+                src={assetUrl(item.logoUrl)}
                 alt={item.name}
                 style={{ height: '48px', width: '100%', objectFit: 'contain', objectPosition: 'center' }}
               />

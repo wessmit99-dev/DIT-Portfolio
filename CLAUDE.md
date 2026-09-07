@@ -73,6 +73,21 @@ scripts/                    fetch-stitch.sh, validate.js
 
 No component code changes needed for content updates.
 
+## Images — Supabase Storage
+
+Images are served from the Supabase project **"DIT Portfolio"** (`jucctnmjzwbakmjbxebs`),
+public bucket `gallery`. Storage-only — no database, no supabase-js client
+(keeps the bundle light). Free tier.
+
+- **Env:** `VITE_SUPABASE_URL` in `.env` (see `.env.example`). Also set it in Vercel → Environment Variables.
+- **Every image URL in `mockData.ts` is passed through `assetUrl()`** ([src/lib/assets.ts](src/lib/assets.ts)) before rendering:
+  - `''` → fallback placeholder
+  - `/hero.jpg` (leading slash) → local file in `public/` — still works, nothing to migrate
+  - `on-set/IMG_9196.jpg` (no slash, no `http`) → object in the `gallery` bucket
+  - `https://…` → used as-is
+- **To add an image:** upload it in the Supabase dashboard (Storage → `gallery`, folders allowed), then reference its object path (e.g. `on-set/still-01.jpg`) in `mockData.ts`.
+- Bucket limits: 15 MB/file, `image/jpeg|png|webp|avif`.
+
 ## Design System
 
 - **Theme:** Dark — background `#131313`, surfaces `#1c1c1c` → `#353535`

@@ -1,4 +1,5 @@
 import type { AgentData } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface AgentCardProps {
   readonly agent: AgentData;
@@ -21,7 +22,7 @@ export default function AgentCard({ agent }: Readonly<AgentCardProps>) {
       >
         {agent.logoUrl ? (
           <img
-            src={agent.logoUrl}
+            src={assetUrl(agent.logoUrl)}
             alt={agent.agency}
             style={{ maxHeight: '80px', maxWidth: '180px', objectFit: 'contain' }}
           />

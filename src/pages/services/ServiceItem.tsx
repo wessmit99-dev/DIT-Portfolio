@@ -1,5 +1,6 @@
 import Badge from '@/components/ui/Badge';
 import type { ServiceDetail } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface ServiceItemProps {
   readonly data: ServiceDetail;
@@ -16,7 +17,7 @@ export default function ServiceItem({ data, isEven }: ServiceItemProps) {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${encodeURI(data.imageUrl)})`,
+            backgroundImage: `url(${encodeURI(assetUrl(data.imageUrl))})`,
             opacity: 0.2,
           }}
         />

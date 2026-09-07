@@ -1,4 +1,5 @@
 import type { GearPartnerData } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface GearPartnerRowProps {
   readonly partner: GearPartnerData;
@@ -21,7 +22,7 @@ export default function GearPartnerRow({ partner }: Readonly<GearPartnerRowProps
       >
         {partner.logoUrl ? (
           <img
-            src={partner.logoUrl}
+            src={assetUrl(partner.logoUrl)}
             alt={partner.name}
             style={{ maxHeight: '60px', maxWidth: '140px', objectFit: 'contain' }}
           />

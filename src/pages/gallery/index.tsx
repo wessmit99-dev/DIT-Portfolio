@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { siteData } from '@/data/mockData';
 import type { GalleryImage } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface GalleryPageProps {}
 
@@ -36,7 +37,7 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
         </p>
       </section>
 
-      {/* Tabs + Grid */}
+      {/* Album menu + grid */}
       <section
         className="px-4 sm:px-12 pb-24"
         style={{ backgroundColor: '#131313' }}
@@ -46,89 +47,101 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
             No albums yet — add entries to <code>siteData.gallery.albums</code> in mockData.ts.
           </p>
         ) : (
-          <>
-            {/* Tab bar */}
-            <div className="flex items-center gap-6 mb-8 overflow-x-auto">
-              <div className="flex items-center gap-6 shrink-0" role="tablist" aria-label="Gallery albums">
-                {albums.map((album) => (
+          <div className="flex flex-col md:flex-row md:gap-12">
+            {/* Album menu — horizontal strip on mobile, vertical rail on desktop */}
+            <nav
+              aria-label="Gallery albums"
+              className="
+                flex flex-row gap-6 overflow-x-auto pb-4 mb-8
+                md:flex-col md:gap-1 md:overflow-visible md:pb-0 md:mb-0
+                md:w-[200px] md:shrink-0 md:sticky md:self-start
+              "
+              style={{ top: '96px' }}
+            >
+              {albums.map((album) => {
+                const isActive = activeAlbum.id === album.id;
+                return (
                   <button
                     key={album.id}
                     onClick={() => setActiveAlbumId(album.id)}
-                    role="tab"
-                    aria-selected={activeAlbumId === album.id}
-                    className="text-xs uppercase tracking-[0.2em] transition-colors duration-150 bg-transparent border-0 p-0 cursor-pointer whitespace-nowrap"
+                    aria-current={isActive ? 'true' : undefined}
+                    className="
+                      text-left bg-transparent border-0 cursor-pointer whitespace-nowrap
+                      p-0 md:px-4 md:py-3 md:rounded md:whitespace-normal
+                      transition-colors duration-150
+                    "
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      color: activeAlbumId === album.id ? '#00e5ff' : '#666666',
+                      backgroundColor: isActive ? '#1c1c1c' : 'transparent',
                     }}
                   >
-                    {album.name}
-                  </button>
-                ))}
-              </div>
-              <div className="flex-1 h-px" style={{ backgroundColor: '#353535' }} />
-            </div>
-
-            {/* Album header */}
-            <div className="mb-8">
-              <h2
-                className="text-2xl font-bold"
-                style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
-              >
-                {activeAlbum.name}
-              </h2>
-              {activeAlbum.subtitle && (
-                <p className="mt-1 text-sm" style={{ color: '#a0a0a0' }}>
-                  {activeAlbum.subtitle}
-                </p>
-              )}
-            </div>
-
-            {/* Image grid */}
-            {activeAlbum.images.length === 0 ? (
-              <p style={{ color: '#a0a0a0' }}>No images in this album yet.</p>
-            ) : (
-              <div
-                className="grid gap-2"
-                style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))' }}
-              >
-                {activeAlbum.images.map((img) => (
-                  <button
-                    key={img.id}
-                    className="group relative overflow-hidden w-full"
-                    style={{
-                      backgroundColor: '#1c1c1c',
-                      border: 'none',
-                      padding: 0,
-                      cursor: 'pointer',
-                      display: 'block',
-                    }}
-                    onClick={() => setLightbox(img)}
-                    aria-label={`View ${img.alt}`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
-                    />
-                    {img.caption && (
-                      <div
-                        className="absolute bottom-0 left-0 right-0 px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}
+                    <span
+                      className="block text-xs uppercase tracking-[0.2em]"
+                      style={{ color: isActive ? '#00e5ff' : '#666666' }}
+                    >
+                      {album.name}
+                    </span>
+                    {album.subtitle && (
+                      <span
+                        className="hidden md:block mt-1 text-xs normal-case tracking-normal"
+                        style={{ color: isActive ? '#a0a0a0' : '#4a4a4a' }}
                       >
-                        <p
-                          className="text-sm"
-                          style={{ color: '#c3f5ff', fontFamily: "'Space Grotesk', sans-serif" }}
-                        >
-                          {img.caption}
-                        </p>
-                      </div>
+                        {album.subtitle}
+                      </span>
                     )}
                   </button>
-                ))}
-              </div>
-            )}
-          </>
+                );
+              })}
+            </nav>
+
+            {/* Active album */}
+            <div className="min-w-0 flex-1">
+              {/* Image grid */}
+              {activeAlbum.images.length === 0 ? (
+                <p style={{ color: '#a0a0a0' }}>No images in this album yet.</p>
+              ) : (
+                <div
+                  className="grid gap-2"
+                  style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))' }}
+                >
+                  {activeAlbum.images.map((img) => (
+                    <button
+                      key={img.id}
+                      className="group relative overflow-hidden w-full"
+                      style={{
+                        backgroundColor: '#1c1c1c',
+                        border: 'none',
+                        padding: 0,
+                        cursor: 'pointer',
+                        display: 'block',
+                      }}
+                      onClick={() => setLightbox(img)}
+                      aria-label={`View ${img.alt}`}
+                    >
+                      <img
+                        src={assetUrl(img.src)}
+                        alt={img.alt}
+                        className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {img.caption && (
+                        <div
+                          className="absolute bottom-0 left-0 right-0 px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.8))' }}
+                        >
+                          <p
+                            className="text-sm"
+                            style={{ color: '#c3f5ff', fontFamily: "'Space Grotesk', sans-serif" }}
+                          >
+                            {img.caption}
+                          </p>
+                        </div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         )}
       </section>
 
@@ -145,7 +158,7 @@ export default function GalleryPage(_props: Readonly<GalleryPageProps>) {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={lightbox.src}
+              src={assetUrl(lightbox.src)}
               alt={lightbox.alt}
               className="w-full object-contain"
               style={{ maxHeight: '85vh' }}

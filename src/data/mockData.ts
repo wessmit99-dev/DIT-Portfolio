@@ -358,6 +358,17 @@ export const siteData: SiteData = {
     projects: [
       // ── 2025/2026 ──────────────────────────────────────────────────────────
       {
+        id:                'the-road-home',
+        title:             'THE ROAD HOME',
+        category:          'Feature Film',
+        year:              '2026',
+        productionCompany: 'Studio Canal / Blue Ice Africa',
+        dop:               'Tobias Schliessler ASC',
+        role:              'Data Wrangler',
+        imageUrl:          '',
+        href:              '#',
+      },
+      {
         id:                'invisible-s1',
         title:             'INVISIBLE S1',
         category:          'TV Series',
@@ -539,6 +550,17 @@ export const siteData: SiteData = {
 
       // ── COMMERCIALS ────────────────────────────────────────────────────────
       // 2026
+      {
+        id:                'toyota-hilux',
+        title:             'TOYOTA HILUX',
+        category:          'Commercial',
+        year:              '2026',
+        productionCompany: 'Fort',
+        dop:               "Rory O'Grady SASC",
+        role:              'DIT',
+        imageUrl:          '',
+        href:              '#',
+      },
       {
         id:                'the-north-face',
         title:             'THE NORTH FACE',
@@ -994,11 +1016,11 @@ export const siteData: SiteData = {
     heroSubheadline: 'On-set stills from production.',
     albums: [
       {
-        id: 'album-1',
-        name: 'On Set',
-        subtitle: '2024',
+        id: 'tvcs',
+        name: 'TVCs',
+        subtitle: 'Commercial work',
         images: [
-          { id: '1', src: '/gallery/IMG_9196.jpg', alt: 'On-set crew in rain-drenched alley with atmospheric backlight' },
+          { id: 'tvc-1', src: 'TVCs/IMG_3464.jpg', alt: 'On-set still from a commercial shoot' },
         ],
       },
     ],

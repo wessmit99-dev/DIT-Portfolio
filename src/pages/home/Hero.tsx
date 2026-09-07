@@ -1,5 +1,6 @@
 import Button from '@/components/ui/Button';
 import type { HeroData } from '@/types';
+import { assetUrl } from '@/lib/assets';
 
 export interface HeroProps {
   readonly data: HeroData;
@@ -13,7 +14,7 @@ export default function Hero({ data }: HeroProps) {
     >
       {/* Background image */}
       <img
-        src={data.backgroundImageUrl}
+        src={assetUrl(data.backgroundImageUrl)}
         alt={data.backgroundImageAlt}
         className="absolute inset-0 w-full h-full object-cover"
       />
