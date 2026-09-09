@@ -18,28 +18,28 @@ function getInitials(name: string): string {
 export default function ToolsGrid({ data }: ToolsGridProps) {
   return (
     <section
-      className="py-12 sm:py-16 px-4 sm:px-12"
+      className="py-12 sm:py-16 px-4 sm:px-8"
       style={{ backgroundColor: '#1c1c1c' }}
     >
       <div
-        className="mx-auto p-8 sm:p-10"
-        style={{ maxWidth: '56rem', backgroundColor: '#131313' }}
+        className="mx-auto p-6 sm:p-12"
+        style={{ maxWidth: '1920px', backgroundColor: '#131313' }}
       >
         <SectionLabel label="WORKFLOW TOOLS" className="mb-8" />
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-12">
           {data.items.map((item) => (
-            <div key={item.name} className="flex flex-col items-center gap-3 text-center">
+            <div key={item.name} className="flex flex-col items-center gap-4 text-center">
               {item.logoUrl ? (
                 <img
                   src={assetUrl(item.logoUrl)}
                   alt={item.name}
-                  style={{ height: '48px', width: '100%', objectFit: 'contain', objectPosition: 'center' }}
+                  style={{ height: '56px', width: '100%', objectFit: 'contain', objectPosition: 'center' }}
                 />
               ) : (
                 <div
                   className="flex items-center justify-center text-xs font-bold tracking-widest"
                   style={{
-                    height: '48px',
+                    height: '56px',
                     width: '100%',
                     backgroundColor: '#2a2a2a',
                     color: '#555555',
