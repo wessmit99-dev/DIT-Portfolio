@@ -66,7 +66,7 @@ scripts/                    fetch-stitch.sh, validate.js
   - Commercial category: `'Commercial'`
   - Long form and commercials are split into separate views via a toggle on the projects page
 - Update services → `siteData.services.services[]`
-  - Service order: `01 Live Grading` → `02 On Set Workflow Management` → `03 On Set QC` → `04 Data Management`
+  - Service order (2×2 grid, top-left → bottom-right): `01 On Set Workflow Management` → `02 Data Management` → `03 On Set QC` → `04 Live Grading`. `number` fields track grid position — renumber if you reorder.
   - Optional `imageUrl` field on each service — place images in `public/` and reference as `/filename.ext`. Renders as a full-bleed background at 20% opacity.
 - Change contact info → `siteData.contact.infoPanel`, `coordinates`
 - Update social links → `siteData.footer.socialLinks`

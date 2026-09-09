@@ -18,11 +18,17 @@ export default function AboutMe({ data }: Readonly<AboutMeProps>) {
 
   return (
     <section
-      className="py-12 sm:py-24 px-4 sm:px-12 mx-auto"
-      style={{ maxWidth: '1920px', backgroundColor: '#1c1c1c' }}
+      className="py-12 sm:py-16 px-4 sm:px-12"
+      style={{ backgroundColor: '#1c1c1c' }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3/4' }}>
+      <div
+        className="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-8 items-center mx-auto p-8 sm:p-10"
+        style={{ maxWidth: '56rem', backgroundColor: '#131313' }}
+      >
+        <div
+          className="relative w-full max-w-[220px] overflow-hidden"
+          style={{ aspectRatio: '3/4' }}
+        >
           {data.photos.map((src, i) => (
             <div
               key={i}
@@ -39,13 +45,13 @@ export default function AboutMe({ data }: Readonly<AboutMeProps>) {
 
         <div>
           <h2
-            className="text-4xl sm:text-5xl font-bold mb-6"
+            className="text-2xl sm:text-3xl font-bold mb-3"
             style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
           >
             {data.heading}
           </h2>
           <p
-            className="text-base leading-relaxed"
+            className="text-sm sm:text-base leading-relaxed"
             style={{ color: 'rgba(245,245,245,0.75)' }}
           >
             {data.body}

@@ -23,11 +23,17 @@ export default function ServicesPage() {
         </h1>
       </div>
 
-      {/* Service items */}
-      {services.map((service, index) => (
-        <ServiceItem key={service.id} data={service} isEven={index % 2 === 1} />
-      ))}
-
+      {/* Service grid — 2×2 on desktop, stacked on mobile */}
+      <section
+        className="px-4 sm:px-12 pb-16 sm:pb-24"
+        style={{ backgroundColor: '#131313', maxWidth: '1920px', margin: '0 auto' }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          {services.map((service) => (
+            <ServiceItem key={service.id} data={service} />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

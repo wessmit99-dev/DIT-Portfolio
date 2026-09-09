@@ -284,25 +284,8 @@ export const siteData: SiteData = {
     footerCtaHref:   '/contact',
     services: [
       {
-        id:          'live-grading',
-        number:      '01',
-        title:       'Live Grading',
-        imageUrl:    '/livegrade.png',
-        description: 'Real-time color manipulation and look development on-set using calibrated reference monitoring. CDL-based workflow for seamless handoff to post.',
-        tools: [
-          { name: 'Pomfort LiveGrade Studio' },
-          { name: 'Flanders Scientific' },
-          { name: 'CDL' },
-        ],
-        specs: [
-          { key: 'COLOR SPACE', value: 'ACES / LogC3 / LogC4' },
-          { key: 'CALIBRATION', value: 'Calman Ultimate' },
-          { key: 'LUT FORMAT',  value: '.cube 33pt' },
-        ],
-      },
-      {
         id:          'on-set-workflow-management',
-        number:      '02',
+        number:      '01',
         title:       'On Set Workflow Management',
         imageUrl:    '/on set workflow.JPG',
         description: 'End-to-end coordination of on-set data, color, and media pipeline — from camera offload to editorial handoff. Ensuring every department stays in sync and nothing falls through the cracks.',
@@ -315,6 +298,21 @@ export const siteData: SiteData = {
           { key: 'OFFLOAD',  value: 'Dual-destination verified copy' },
           { key: 'REPORTS',  value: 'Per-card camera & sound reports' },
           { key: 'HANDOFF',  value: 'Editorial-ready folder structure' },
+        ],
+      },
+      {
+        id:          'data-management',
+        number:      '02',
+        title:       'Data Management',
+        imageUrl:    '/data.jpg',
+        description: 'Secure, high-speed offloading with checksum verification at every stage. Triple-redundant backup strategy with DIT RAID and on-set shuttle drives. Detailed reports tailored to surface the information post needs most.',
+        tools: [
+          { name: 'Pomfort Silverstack' },
+        ],
+        specs: [
+          { key: 'THROUGHPUT', value: 'Up to 3.6 GB/s' },
+          { key: 'CHECKSUM',   value: 'MD5 / xxHash' },
+          { key: 'REDUNDANCY', value: '3:2:1 Strategy' },
         ],
       },
       {
@@ -335,18 +333,20 @@ export const siteData: SiteData = {
         ],
       },
       {
-        id:          'data-management',
+        id:          'live-grading',
         number:      '04',
-        title:       'Data Management',
-        imageUrl:    '/data.jpg',
-        description: 'Secure, high-speed offloading with checksum verification at every stage. Triple-redundant backup strategy with DIT RAID and on-set shuttle drives. Detailed reports tailored to surface the information post needs most.',
+        title:       'Live Grading',
+        imageUrl:    '/livegrade.png',
+        description: 'Real-time color manipulation and look development on-set using calibrated reference monitoring. CDL-based workflow for seamless handoff to post.',
         tools: [
-          { name: 'Pomfort Silverstack' },
+          { name: 'Pomfort LiveGrade Studio' },
+          { name: 'Flanders Scientific' },
+          { name: 'CDL' },
         ],
         specs: [
-          { key: 'THROUGHPUT', value: 'Up to 3.6 GB/s' },
-          { key: 'CHECKSUM',   value: 'MD5 / xxHash' },
-          { key: 'REDUNDANCY', value: '3:2:1 Strategy' },
+          { key: 'COLOR SPACE', value: 'ACES / LogC3 / LogC4' },
+          { key: 'CALIBRATION', value: 'Calman Ultimate' },
+          { key: 'LUT FORMAT',  value: '.cube 33pt' },
         ],
       },
     ],

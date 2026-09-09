@@ -4,48 +4,48 @@ import { assetUrl } from '@/lib/assets';
 
 export interface ServiceItemProps {
   readonly data: ServiceDetail;
-  readonly isEven: boolean;
 }
 
-export default function ServiceItem({ data, isEven }: ServiceItemProps) {
+export default function ServiceItem({ data }: Readonly<ServiceItemProps>) {
   return (
     <article
-      className="py-12 sm:py-24 px-4 sm:px-12 relative overflow-hidden"
-      style={{ backgroundColor: isEven ? '#1c1c1c' : '#131313' }}
+      className="relative overflow-hidden h-full flex flex-col p-8 sm:p-10"
+      style={{ backgroundColor: '#1c1c1c' }}
     >
       {data.imageUrl && (
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${encodeURI(assetUrl(data.imageUrl))})`,
-            opacity: 0.2,
+            opacity: 0.18,
           }}
         />
       )}
-      <div
-        className="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
-        style={{ maxWidth: '1920px' }}
-      >
-        {/* Title + description */}
-        <div className="lg:col-span-12">
-          <h2
-            className="text-3xl font-bold uppercase tracking-tight mb-6"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
-          >
-            {data.title}
-          </h2>
-          <p className="text-lg leading-relaxed" style={{ color: '#a0a0a0' }}>
-            {data.description}
-          </p>
 
-          {/* Tools */}
-          <div className="flex flex-wrap gap-2 mt-8">
-            {data.tools.map((tool) => (
-              <Badge key={tool.name} label={tool.name} />
-            ))}
-          </div>
+      <div className="relative flex flex-col h-full">
+        <span
+          className="text-sm font-bold tracking-[0.2em] mb-4"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#666666' }}
+        >
+          {data.number}
+        </span>
+
+        <h2
+          className="text-2xl font-bold uppercase tracking-tight mb-4"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5' }}
+        >
+          {data.title}
+        </h2>
+
+        <p className="text-base leading-relaxed" style={{ color: '#a0a0a0' }}>
+          {data.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-auto pt-8">
+          {data.tools.map((tool) => (
+            <Badge key={tool.name} label={tool.name} />
+          ))}
         </div>
-
       </div>
     </article>
   );
