@@ -85,7 +85,13 @@ public bucket `gallery`. Storage-only — no database, no supabase-js client
   - `/hero.jpg` (leading slash) → local file in `public/` — still works, nothing to migrate
   - `on-set/IMG_9196.jpg` (no slash, no `http`) → object in the `gallery` bucket
   - `https://…` → used as-is
-- **To add an image:** upload it in the Supabase dashboard (Storage → `gallery`, folders allowed), then reference its object path (e.g. `on-set/still-01.jpg`) in `mockData.ts`.
+- **To add an image:** upload it in the Supabase dashboard (Storage → `gallery`, folders allowed), then reference its object path (e.g. `on-set/still-01.jpg`) in `mockData.ts`. A bucket folder = a gallery album (its `name`/`subtitle` are set in `mockData.ts`).
+- **After uploading, run the resizer** so the site serves web-sized photos (free tier has no on-the-fly image transforms):
+  ```bash
+  node --env-file=.env.local scripts/resize-gallery-images.mjs --dry   # preview
+  node --env-file=.env.local scripts/resize-gallery-images.mjs         # apply
+  ```
+  Needs `SUPABASE_SERVICE_ROLE_KEY` in `.env.local` (gitignored). Downscales to 2000px long edge, converts iPhone HEIC-as-`.JPG` files to real JPEGs, re-uploads in place. Idempotent.
 - Bucket limits: 15 MB/file, `image/jpeg|png|webp|avif`.
 
 ## Design System

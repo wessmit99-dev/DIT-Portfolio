@@ -16,6 +16,10 @@
  */
 import { createClient } from '@supabase/supabase-js';
 import sharp from 'sharp';
+import { execFileSync } from 'node:child_process';
+import { writeFileSync, readFileSync, rmSync, mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const SUPABASE_URL = 'https://jucctnmjzwbakmjbxebs.supabase.co';
 const BUCKET = 'gallery';
@@ -50,6 +54,23 @@ async function listAll(prefix = '') {
 
 function kb(n) { return `${(n / 1024).toFixed(0)} KB`; }
 
+/**
+ * Many "*.JPG" files here are actually HEIC (iPhone) and sharp/libvips can't
+ * decode them. macOS `sips` can — transcode to JPEG as a fallback.
+ */
+function heicToJpeg(buf) {
+  const dir = mkdtempSync(join(tmpdir(), 'gallery-'));
+  const src = join(dir, 'in.heic');
+  const out = join(dir, 'out.jpg');
+  try {
+    writeFileSync(src, buf);
+    execFileSync('sips', ['-s', 'format', 'jpeg', src, '--out', out], { stdio: 'ignore' });
+    return readFileSync(out);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
 const files = await listAll();
 console.log(`Found ${files.length} objects in "${BUCKET}".\n`);
 
@@ -61,17 +82,29 @@ for (const { path, size } of files) {
     if (dlErr) throw dlErr;
     const input = Buffer.from(await blob.arrayBuffer());
 
-    const meta = await sharp(input).metadata();
+    // Decode-probe. If sharp can't fully decode (HEIC masquerading as .JPG),
+    // transcode via sips. A metadata() call isn't enough — sharp reads HEIF
+    // headers fine but fails later in the pixel pipeline — so force a real decode.
+    let decodable = input;
+    let converted = false;
+    try {
+      await sharp(input).resize(16, 16, { fit: 'inside' }).toBuffer();
+    } catch {
+      decodable = heicToJpeg(input);
+      converted = true;
+    }
+
+    const meta = await sharp(decodable).metadata();
     const longEdge = Math.max(meta.width ?? 0, meta.height ?? 0);
     const isPng = meta.format === 'png';
 
-    if (longEdge <= MAX_EDGE && input.byteLength <= TARGET_MAX_BYTES) {
+    if (!converted && longEdge <= MAX_EDGE && input.byteLength <= TARGET_MAX_BYTES) {
       console.log(`skip   ${path}  (${longEdge}px, ${kb(input.byteLength)})`);
       skipped++;
       continue;
     }
 
-    let pipeline = sharp(input).rotate().resize({
+    let pipeline = sharp(decodable).rotate().resize({
       width: MAX_EDGE,
       height: MAX_EDGE,
       fit: 'inside',
@@ -82,14 +115,17 @@ for (const { path, size } of files) {
       : pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true });
     const output = await pipeline.toBuffer();
 
-    if (output.byteLength >= input.byteLength) {
+    // A HEIC-as-.JPG file is broken in most browsers, so always replace it even
+    // if the JPEG isn't smaller. Otherwise skip no-win re-encodes.
+    if (!converted && output.byteLength >= input.byteLength) {
       console.log(`skip   ${path}  (re-encode not smaller)`);
       skipped++;
       continue;
     }
 
     console.log(
-      `resize ${path}  ${kb(input.byteLength)} -> ${kb(output.byteLength)}` + (DRY ? '  [dry]' : ''),
+      `${converted ? 'heic→jpg' : 'resize'} ${path}  ${kb(input.byteLength)} -> ${kb(output.byteLength)}` +
+        (DRY ? '  [dry]' : ''),
     );
     savedBytes += input.byteLength - output.byteLength;
 
