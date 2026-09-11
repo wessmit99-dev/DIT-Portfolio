@@ -18,13 +18,13 @@ export default function AgentCard({ agent }: Readonly<AgentCardProps>) {
       {/* Logo */}
       <div
         className="flex items-center"
-        style={{ height: '80px' }}
+        style={{ height: '120px' }}
       >
         {agent.logoUrl ? (
           <img
             src={assetUrl(agent.logoUrl)}
             alt={agent.agency}
-            style={{ maxHeight: '80px', maxWidth: '180px', objectFit: 'contain' }}
+            style={{ maxHeight: '120px', maxWidth: '280px', objectFit: 'contain' }}
           />
         ) : (
           <div

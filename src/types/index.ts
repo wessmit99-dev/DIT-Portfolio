@@ -21,7 +21,6 @@ export type {
   ProjectType,
   ContactInfoItem,
   AgentData,
-  GearPartnerData,
   ContactPageData,
   GalleryAlbum,
   GalleryImage,

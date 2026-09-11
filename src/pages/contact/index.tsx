@@ -1,10 +1,10 @@
 import { siteData } from '@/data/mockData';
 import ContactHero from './ContactHero';
 import AgentCard from './AgentCard';
-import GearPartnerRow from './GearPartnerRow';
+import ContactMap from './ContactMap';
 
 export default function ContactPage() {
-  const { heroEyebrow, heroHeadline, heroSubheadline, email, phone, agents, gearPartner } = siteData.contact;
+  const { heroEyebrow, heroHeadline, heroSubheadline, email, phone, agents, mapAddress } = siteData.contact;
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function ContactPage() {
 
       {/* Representation */}
       <section style={{ backgroundColor: '#131313' }}>
-        <div className="mx-auto px-4 sm:px-12 pb-12 sm:pb-16" style={{ maxWidth: '1920px' }}>
+        <div className="mx-auto px-4 sm:px-12 pb-12 sm:pb-24" style={{ maxWidth: '1920px' }}>
           <p
             className="text-sm uppercase tracking-[0.3em] mb-8 font-semibold"
             style={{ color: '#f5f5f5' }}
@@ -29,20 +29,8 @@ export default function ContactPage() {
             {agents.map((agent, i) => (
               <AgentCard key={i} agent={agent} />
             ))}
+            <ContactMap address={mapAddress} />
           </div>
-        </div>
-      </section>
-
-      {/* Gear Partner */}
-      <section style={{ backgroundColor: '#131313' }}>
-        <div className="mx-auto px-4 sm:px-12 pb-12 sm:pb-24" style={{ maxWidth: '1920px' }}>
-          <p
-            className="text-sm uppercase tracking-[0.3em] mb-8 font-semibold"
-            style={{ color: '#f5f5f5' }}
-          >
-            GEAR PARTNER
-          </p>
-          <GearPartnerRow partner={gearPartner} />
         </div>
       </section>
     </>

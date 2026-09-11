@@ -148,15 +148,6 @@ export interface AgentData {
   readonly website: string;
 }
 
-export interface GearPartnerData {
-  readonly name: string;
-  readonly description: string;
-  readonly email: string;
-  readonly phone: string;
-  readonly website: string;
-  readonly logoUrl: string;
-}
-
 export interface ContactPageData {
   readonly heroEyebrow: string;
   readonly heroHeadline: string;
@@ -172,12 +163,8 @@ export interface ContactPageData {
   };
   readonly projectTypes: readonly ProjectType[];
   readonly infoPanel: readonly ContactInfoItem[];
-  readonly coordinates: {
-    readonly lat: string;
-    readonly lng: string;
-  };
+  readonly mapAddress: string;
   readonly agents: readonly AgentData[];
-  readonly gearPartner: GearPartnerData;
 }
 
 // ─── Gallery Page ─────────────────────────────────────────────────────────────
@@ -975,40 +962,19 @@ export const siteData: SiteData = {
       { label: 'RESPONSE TIME', value: '< 12 HOURS' },
       { label: 'ENCRYPTION',    value: 'AES-256' },
     ],
-    coordinates: {
-      lat: '52.5200° N',
-      lng: '13.4050° E',
-    },
+    mapAddress: '6 Wilge Rd, Claremont, Cape Town, South Africa',
     agents: [
       {
-        name:      'Exposure Crew',
-        agency:    '',
-        territory: 'JOHANNESBURG',
-        email:     'Daphne@exposurecrew.tv',
-        secondEmail: '',
-        phone:     '083 218 0859',
-        logoUrl:   '/logos/exposure-crew.png',
-        website:   'https://www.exposurecrew.tv/',
-      },
-      {
-        name:      'Star Film Crew',
-        agency:    '',
+        name:      'Kirsty',
+        agency:    'Monstrum Digital',
         territory: 'CAPE TOWN',
-        email:     'angelica@starfilmcrew.co.za',
-        secondEmail: 'mel@starfilmcrew.co.za',
-        phone:     '076 980 2160',
-        logoUrl:   '/logos/star-crew.png',
-        website:   'https://starfilmcrew.co.za/#!/up',
+        email:     'kirsty@monstrum.co.za',
+        secondEmail: '',
+        phone:     '076 676 2519',
+        logoUrl:   '/logos/Monstrum.webp',
+        website:   'https://www.monstrum.co.za/',
       },
     ],
-    gearPartner: {
-      name:        'Monstrum Digital',
-      description: '',
-      email:       'kirsty@monstrum.co.za',
-      phone:       '076 676 2519',
-      website:     'https://www.monstrum.co.za/',
-      logoUrl:     '/logos/Monstrum.webp',
-    },
   },
 
   gallery: {
