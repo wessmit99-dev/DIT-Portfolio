@@ -984,7 +984,6 @@ export const siteData: SiteData = {
       {
         id: 'long-form',
         name: 'Long Form',
-        subtitle: 'Features & series',
         images: [
           { id: 'lf-22', src: 'Long Form/IMG_4813.jpg', alt: 'Behind-the-scenes production still' },
           { id: 'lf-17', src: 'Long Form/IMG_3553.JPG', alt: 'Behind-the-scenes production still' },
@@ -1038,7 +1037,6 @@ export const siteData: SiteData = {
       {
         id: 'short-form',
         name: 'Short Form',
-        subtitle: 'Commercials & music videos',
         images: [
           { id: 'sf-3', src: 'Short Form/IMG_3466.jpg', alt: 'Behind-the-scenes production still' },
           { id: 'sf-6', src: 'Short Form/IMG_4024.JPG', alt: 'Behind-the-scenes production still' },
