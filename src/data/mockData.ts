@@ -246,7 +246,7 @@ export const siteData: SiteData = {
     aboutMe: {
       photos: ['/Photo-2.JPG'],
       heading: 'About Me',
-      body: `I'm a Digital Imaging Technician based in Cape Town, working across feature films, series, and commercials. On set, I bridge the gap between camera and post — managing color pipelines, building LUT workflows, and ensuring every frame is technically and aesthetically sound from the first take. I bring a methodical eye and a passion for the craft to every production I join.`,
+      body: `Hi, I'm Wes. A Digital Imaging Technician based in South Africa, keeping productions running smoothly on set and making sure every frame makes it safely from camera to post. I manage the technical workflow behind the image, catch problems before they become expensive issues in post, and ensure footage is backed up, organised, and handed over efficiently. I'm all about keeping the process reliable, streamlined, and stress free for the production and post team.`,
     },
     toolsGrid: {
       items: [
