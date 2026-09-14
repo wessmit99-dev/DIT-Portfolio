@@ -275,7 +275,7 @@ export const siteData: SiteData = {
         number:      '01',
         title:       'On Set Workflow Management',
         imageUrl:    '/on set workflow.JPG',
-        description: 'End-to-end coordination of on-set data, color, and media pipeline — from camera offload to editorial handoff. Ensuring every department stays in sync and nothing falls through the cracks.',
+        description: 'End-to-end coordination of on-set data, color, and media pipeline, from camera offload to editorial handoff. Ensuring every department stays in sync and nothing falls through the cracks.',
         tools: [
           { name: 'Pomfort Silverstack' },
           { name: 'DaVinci Resolve' },
@@ -307,7 +307,7 @@ export const siteData: SiteData = {
         number:      '03',
         title:       'On Set QC',
         imageUrl:    '/QC.webp',
-        description: 'Rigorous image quality control on set — monitoring exposure, focus, noise, and codec integrity in real time to protect the image before it leaves the camera.',
+        description: 'Rigorous image quality control on set, monitoring exposure, focus, noise, and codec integrity in real time to protect the image before it leaves the camera.',
         tools: [
           { name: 'Flanders Scientific' },
           { name: 'Pomfort Silverstack' },
