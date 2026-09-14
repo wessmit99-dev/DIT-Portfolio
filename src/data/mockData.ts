@@ -235,7 +235,7 @@ export const siteData: SiteData = {
     hero: {
       eyebrow:             'Digital Imaging Technician',
       headline:            'Enhance Your Production',
-      body:                'Elevating cinematic narratives through rigorous data management and advanced color science. Bridging the gap between creative vision and technical execution on the highest-stakes productions.',
+      body:                'Elevating cinematic narratives through rigorous data management and advanced color science. Bridging the gap between creative vision and technical execution.',
       primaryCtaLabel:     'SERVICES',
       primaryCtaHref:      '/services',
       secondaryCtaLabel:   'CONTACT',
