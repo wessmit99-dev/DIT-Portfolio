@@ -52,3 +52,22 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* ==========================================================
+   Typewriter cursor (nav brand name)
+   ========================================================== */
+@keyframes typewriter-cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-typewriter-cursor {
+  animation: typewriter-cursor-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-typewriter-cursor {
+    animation: none;
+    opacity: 1;
+  }
+}

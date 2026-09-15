@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useScrollEffect } from '@/hooks/useScrollEffect';
+import { useTypewriter } from '@/hooks/useTypewriter';
 import Button from '@/components/ui/Button';
 import { siteData } from '@/data/mockData';
 
@@ -11,6 +12,8 @@ export interface NavProps {
 export default function Nav({ className = '' }: NavProps) {
   const scrolled = useScrollEffect(80);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const typedBrandName = useTypewriter(siteData.nav.brandName, open ? `${pathname}-open` : pathname, 140);
 
   useEffect(() => {
     if (!open) return;
@@ -43,7 +46,14 @@ export default function Nav({ className = '' }: NavProps) {
           className="text-xl font-bold tracking-tighter"
           style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#f5f5f5', textDecoration: 'none' }}
         >
-          {siteData.nav.brandName}
+          {typedBrandName}
+          <span
+            aria-hidden="true"
+            className="inline-block animate-typewriter-cursor"
+            style={{ color: '#00e5ff', marginLeft: '2px' }}
+          >
+            |
+          </span>
         </NavLink>
 
         {/* Desktop nav links */}
